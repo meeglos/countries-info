@@ -43,33 +43,15 @@ export default function Layout() {
                     ))}
                 </div>
             </div>
-            <section className='flex mt-5 border p-4 border-slate-300 border-dotted rounded-lg space-x-4 w-2/3 justify-around'>
-                <div className='font-bold font-lora uppercase text-slate-600'>
-                    bandera
+            <div className='flex flex-col w-2/3 p-2'>
+                <div className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-4'>
+                    {countries.map(country => (
+                        <Country
+                            key={country.cca2}
+                            country={country}
+                        />
+                    ))}
                 </div>
-                <div className='font-bold font-lora uppercase text-slate-600'>
-                    país
-                </div>
-                <div className='font-bold font-lora uppercase text-slate-600'>
-                    capital
-                </div>
-                <div className='font-bold font-lora uppercase text-slate-600'>
-                    continente/región
-                </div>
-                <div className='font-bold font-lora uppercase text-slate-600'>
-                    población
-                </div>
-                <div className='font-bold font-lora uppercase text-slate-600'>
-                    extensión
-                </div>
-            </section>
-            <div className='flex flex-col w-2/3'>
-                {countries.map(country => (
-                    <Country
-                        key={country.cca2}
-                        country={country}
-                    />
-                ))}
             </div>
         </div>
     );

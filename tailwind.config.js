@@ -10,6 +10,7 @@ export default {
             fontFamily: {
                 lora: "'Lora', serif",
                 dm: "'DM Mono', monospace",
+                slabo: "'Slabo 27px', serif;",
             },
         },
     },
