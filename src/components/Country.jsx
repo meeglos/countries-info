@@ -1,3 +1,5 @@
+import { countries as data } from '../data/countries';
+
 export default function Country({ country }) {
     const {
         region,

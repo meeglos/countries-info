@@ -1,11 +1,10 @@
 import { createContext, useState } from 'react';
-import { countries } from '../data/countries';
-import { regions as regionsDB } from '../data/regions';
 
 const CountryContext = createContext();
 
 const CountryProvider = ({ children }) => {
-    const [regions, setRegions] = useState(regionsDB);
+    const [regions, setRegions] = useState([]);
+    const [subRegions, setSubRegions] = useState([]);
     const [regionActual, setRegionActual] = useState(regions[0]);
 
     const handleRegionClick = id => {
@@ -17,6 +16,7 @@ const CountryProvider = ({ children }) => {
         <CountryContext.Provider
             value={{
                 regions,
+                subRegions,
                 regionActual,
                 handleRegionClick,
             }}

@@ -1,16 +1,16 @@
-import { regions } from '../data/regions';
+import { subregions } from '../data/subregions';
 
-export default function Region() {
+export default function SubRegion() {
     return (
         <>
             <div className='w-full flex justify-center'>
                 <select className='form-select border-dotted rounded-lg w-2/3'>
-                    {regions.map(region => (
+                    {subregions.map(subregion => (
                         <option
-                            key={region.id}
-                            value={region.id}
+                            key={subregion.id}
+                            value={subregion.id}
                         >
-                            {region.nombre}
+                            {subregion.nombre}
                         </option>
                     ))}
                 </select>
