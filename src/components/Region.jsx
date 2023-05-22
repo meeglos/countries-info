@@ -1,7 +1,15 @@
 import useCountry from '../hooks/useCountry';
 
 export default function Region() {
-    const { regions, handleRegionChange } = useCountry();
+    const {
+        regions,
+        regionActual,
+        setSubRegions,
+        countries,
+        setCountries,
+        handleRegionChange,
+        regionSelected,
+    } = useCountry();
 
     return (
         <>

@@ -6,10 +6,22 @@ const CountryContext = createContext();
 const CountryProvider = ({ children }) => {
     const [regions, setRegions] = useState(regionsDB);
     const [subRegions, setSubRegions] = useState([]);
-    const [regionActual, setRegionActual] = useState(regions[0]);
+    // const [regionActual, setRegionActual] = useState(regions[0]);
+    const [regionSelected, setRegionSelected] = useState(regions[0]);
 
-    const handleRegionChange = id => {
-        console.log('cambio de región');
+    const handleRegionChange = event => {
+        const id = event.target.value;
+        // setRegionActual(regionActual);
+        const region = regions.filter(region => region.id === id);
+        console.log(typeof id);
+        console.log(region);
+        // Filtrar los países por la región seleccionada
+        // const filteredCountries = countries.filter(
+        //     country => country.region === regionActual
+        // );
+
+        // setCountries(filteredCountries);
+        // setSubRegions([]);
     };
 
     return (
@@ -17,7 +29,7 @@ const CountryProvider = ({ children }) => {
             value={{
                 regions,
                 subRegions,
-                regionActual,
+                regionSelected,
                 handleRegionChange,
             }}
         >
