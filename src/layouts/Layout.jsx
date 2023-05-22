@@ -4,6 +4,7 @@ import Region from '../components/Region';
 import SubRegion from '../components/SubRegion';
 import Language from '../components/Language';
 import Search from '../components/Search';
+import Country from '../components/Country';
 
 // import { countries as data } from '../data/countries';
 
@@ -40,8 +41,11 @@ export default function Layout() {
                 </div>
             </div>
             <div className='flex flex-col w-full lg:w-2/3 p-2'>
+                <div className='w-full my-2'>
+                    <p>Mostrando los paises de {regionActual.nombre} </p>
+                </div>
                 <div className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-4'>
-                    Aquí irán los países
+                    <Country />
                 </div>
             </div>
         </div>

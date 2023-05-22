@@ -1,10 +1,15 @@
-import { regions } from '../data/regions';
+import useCountry from '../hooks/useCountry';
 
 export default function Region() {
+    const { regions, handleRegionChange } = useCountry();
+
     return (
         <>
             <div className='w-full flex justify-center'>
-                <select className='form-select border-dotted rounded-lg w-2/3'>
+                <select
+                    className='form-select border-dotted rounded-lg w-2/3'
+                    onChange={handleRegionChange}
+                >
                     {regions.map(region => (
                         <option
                             key={region.id}
