@@ -1,33 +1,33 @@
 import { createContext, useState } from 'react';
 import { regions as regionsDB } from '../data/regions';
+import { countries as countriesDB } from '../data/countries';
 
 const CountryContext = createContext();
 
 const CountryProvider = ({ children }) => {
     const [regions, setRegions] = useState(regionsDB);
     const [subRegions, setSubRegions] = useState([]);
-    // const [regionActual, setRegionActual] = useState(regions[0]);
     const [regionSelected, setRegionSelected] = useState(regions[0]);
+    const [countries, setCountries] = useState(countriesDB);
 
     const handleRegionChange = event => {
         const id = event.target.value;
-        // setRegionActual(regionActual);
-        const region = regions.filter(region => region.id === id);
-        console.log(typeof id);
-        console.log(region);
+        const region = regions.filter(region => region.id.toString() === id);
+        console.log(region[0].slug);
         // Filtrar los países por la región seleccionada
-        // const filteredCountries = countries.filter(
-        //     country => country.region === regionActual
-        // );
+        const filteredCountries = countries.filter(
+            country => country.region === region[0].slug
+        );
 
-        // setCountries(filteredCountries);
-        // setSubRegions([]);
+        setCountries(filteredCountries);
+        setSubRegions([]);
     };
 
     return (
         <CountryContext.Provider
             value={{
                 regions,
+                countries,
                 subRegions,
                 regionSelected,
                 handleRegionChange,
