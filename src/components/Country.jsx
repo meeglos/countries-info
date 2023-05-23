@@ -1,4 +1,4 @@
-import { countries } from '../data/countries';
+// import { countries } from '../data/countries';
 import useCountry from '../hooks/useCountry';
 
 export default function Country() {

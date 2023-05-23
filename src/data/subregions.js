@@ -8,19 +8,19 @@ const subregions = [
     {
         id: 1,
         nombre: 'Norteamérica',
-        slug: 'north-america',
+        slug: 'North America',
         region_id: 1,
     },
     {
         id: 2,
         nombre: 'Centroamérica',
-        slug: 'centro-america',
+        slug: 'Central America',
         region_id: 1,
     },
     {
         id: 3,
         nombre: 'Sudamerica',
-        slug: 'south-america',
+        slug: 'South America',
         region_id: 1,
     },
     {
@@ -37,8 +37,8 @@ const subregions = [
     },
     {
         id: 6,
-        nombre: 'Europa Oriental',
-        slug: 'eatern-europe',
+        nombre: 'Europa Sur',
+        slug: 'Southern Europe',
         region_id: 2,
     },
 ];

@@ -42,7 +42,7 @@ export default function Layout() {
             </div>
             <div className='flex flex-col w-full lg:w-2/3 p-2'>
                 <div className='w-full my-2'>
-                    <p>Mostrando los paises de {regionSelected.nombre} </p>
+                    <p>Mostrando los paises de ... </p>
                 </div>
                 <div className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-4'>
                     <Country />
