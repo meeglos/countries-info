@@ -24,6 +24,12 @@ const subregions = [
         region_id: 1,
     },
     {
+        id: 12,
+        nombre: 'Caribe',
+        slug: 'Caribbean',
+        region_id: 1,
+    },
+    {
         id: 4,
         nombre: 'Europa Occidental',
         slug: 'western-europe',
@@ -40,6 +46,36 @@ const subregions = [
         nombre: 'Europa Sur',
         slug: 'Southern Europe',
         region_id: 2,
+    },
+    {
+        id: 7,
+        nombre: 'Asia Sur',
+        slug: 'Southern Asia',
+        region_id: 5,
+    },
+    {
+        id: 8,
+        nombre: 'Asia Central',
+        slug: 'Central Asia',
+        region_id: 5,
+    },
+    {
+        id: 9,
+        nombre: 'Asia Oeste',
+        slug: 'Western Asia',
+        region_id: 5,
+    },
+    {
+        id: 10,
+        nombre: 'Asia Este',
+        slug: 'Eastern Asia',
+        region_id: 5,
+    },
+    {
+        id: 11,
+        nombre: 'Asia Sur Este',
+        slug: 'South-Eastern Asia',
+        region_id: 5,
     },
 ];
 

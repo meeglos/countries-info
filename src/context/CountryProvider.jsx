@@ -14,6 +14,7 @@ const CountryProvider = ({ children }) => {
     const handleRegionChange = event => {
         const id = event.target.value;
         const region = regions.filter(region => region.id.toString() === id);
+        console.log(region);
         // console.log(region[0].slug);
         // Filtrar los países por la región seleccionada
 
@@ -25,20 +26,21 @@ const CountryProvider = ({ children }) => {
             subregion => subregion.region_id.toString() === id
         );
 
-        // console.log(filteredSubRegions);
-
         setCountries(filteredCountries);
         setSubRegions(filteredSubRegions);
     };
 
     const handleSubRegionChange = event => {
-        const i = event.target.value;
-        console.log(i);
-        return 0;
-        // Filtrar los países por la subregión seleccionada
-        const filteredCountries = countries.filter(
-            country => country.subregion === subregion[i].slug
+        const subregionId = event.target.value;
+        const subregion = subRegions.filter(
+            subregion => subregion.region_id.toString() === 3
         );
+        console.log(subregion);
+        // return 0;
+        // Filtrar los países por la subregión seleccionada
+        /* const filteredCountries = countries.filter(
+            country => country.subregion === subregion.slug
+        ); */
         // console.log(filteredCountries);
 
         // setCountries(filteredCountries);

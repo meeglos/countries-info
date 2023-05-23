@@ -68,7 +68,7 @@ export default function Country() {
                                     Extensión:
                                 </span>{' '}
                                 <span className='text-xs font-bold text-gray-900'>
-                                    {country.area} km2
+                                    {country.area} km<sup>2</sup>
                                 </span>
                             </p>
                         </div>
