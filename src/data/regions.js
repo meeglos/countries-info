@@ -1,10 +1,5 @@
 const regions = [
     {
-        id: 0,
-        nombre: 'Todos',
-        slug: 'Todos',
-    },
-    {
         id: 1,
         nombre: 'América',
         slug: 'Americas',
