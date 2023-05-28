@@ -9,6 +9,7 @@ export default function Region() {
         setCountries,
         handleRegionChange,
         regionSelected,
+        filteredCountries,
     } = useCountry();
 
     return (
@@ -18,6 +19,7 @@ export default function Region() {
                     className='form-select border-dotted rounded-lg w-2/3'
                     onChange={handleRegionChange}
                 >
+                    <option value='0'>Todos</option>
                     {regions.map(region => (
                         <option
                             key={region.id}

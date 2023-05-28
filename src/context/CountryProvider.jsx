@@ -10,40 +10,57 @@ const CountryProvider = ({ children }) => {
     const [subRegions, setSubRegions] = useState(subregionsDB);
     // const [regionSelected, setRegionSelected] = useState(regions[0]);
     const [countries, setCountries] = useState(countriesDB);
+    const [filteredCountries, setFilteredCountries] = useState();
 
     const handleRegionChange = event => {
         const id = event.target.value;
-        const region = regions.filter(region => region.id.toString() === id);
-        console.log(region);
+        const filteredRegion = regions.filter(
+            region => region.id.toString() === id
+        )[0];
         // console.log(region[0].slug);
-        // Filtrar los países por la región seleccionada
 
+        // Filtrar los países por la región seleccionada
         const filteredCountries = countries.filter(
-            country => country.region === region[0].slug
+            country => country.region === filteredRegion.slug
         );
 
+        // Ordeno alfabéticamente los países - alfabetically ordered countries
+        const aoc = filteredCountries.sort((a, b) =>
+            a.translations.spa.common.localeCompare(b.translations.spa.common)
+        );
+
+        // Filtro las subregiones según la región seleccionada
         const filteredSubRegions = subRegions.filter(
             subregion => subregion.region_id.toString() === id
         );
 
-        setCountries(filteredCountries);
+        console.log(filteredRegion);
+        console.log(filteredSubRegions);
+
+        // setCountries(filteredCountries);
         setSubRegions(filteredSubRegions);
+        // setFilteredCountries(aoc);
+        setCountries(aoc);
     };
 
     const handleSubRegionChange = event => {
         const subregionId = event.target.value;
         const subregion = subRegions.filter(
-            subregion => subregion.region_id.toString() === 3
-        );
-        console.log(subregion);
+            subregion => subregion.id.toString() === subregionId
+        )[0];
+        // console.log(subregion);
         // return 0;
         // Filtrar los países por la subregión seleccionada
-        /* const filteredCountries = countries.filter(
+        const filteredCountries = countries.filter(
             country => country.subregion === subregion.slug
-        ); */
+        );
+        const aoc = filteredCountries.sort((a, b) =>
+            a.translations.spa.common.localeCompare(b.translations.spa.common)
+        );
         // console.log(filteredCountries);
 
-        // setCountries(filteredCountries);
+        setFilteredCountries(aoc);
+        setCountries(aoc);
     };
 
     return (
@@ -54,6 +71,7 @@ const CountryProvider = ({ children }) => {
                 subRegions,
                 handleRegionChange,
                 handleSubRegionChange,
+                filteredCountries,
             }}
         >
             {children}

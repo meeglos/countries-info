@@ -9,11 +9,8 @@ import Country from '../components/Country';
 // import { countries as data } from '../data/countries';
 
 export default function Layout() {
-    const { regions, regionSelected } = useCountry();
-    const { subregions, subregionActual } = useCountry();
-    // const countries = data.filter(
-    //     country => country.region === regionActual.slug
-    // );
+    // const { regions, regionSelected } = useCountry();
+    // const { subregions, subregionActual } = useCountry();
 
     return (
         <div className='flex flex-col items-center justify-center p-5'>

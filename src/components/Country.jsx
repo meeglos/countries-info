@@ -1,24 +1,27 @@
-// import { countries } from '../data/countries';
+// import { countries as countriesDB } from '../data/countries';
 import useCountry from '../hooks/useCountry';
 
 export default function Country() {
     const { regionActual, countries } = useCountry();
+    const filteredCountries = countries.sort((a, b) =>
+        a.translations.spa.common.localeCompare(b.translations.spa.common)
+    );
 
     return (
         <>
-            {countries.map(country => (
+            {filteredCountries.map(country => (
                 <div
                     key={country.cca2}
                     className='overflow-hidden rounded-lg bg-white shadow-xl border border-slate-200'
                 >
                     <div
-                        className='flex h-32 items-center justify-end bg-cover bg-center p-4'
+                        className='flex h-32 items-center justify-end bg-cover bg-center p-4 relative'
                         style={{
                             backgroundImage: `url(${country.flags.svg})`,
                         }}
                     >
-                        <p className='rounded bg-black px-2 py-1 text-sm uppercase tracking-widest text-white opacity-75 shadow-lg'>
-                            {country.translations.spa.common}
+                        <p className='bg-black px-2 py-1 text-xs tracking-tight text-white opacity-75 shadow-lg absolute right-0 bottom-0 rounded-tl-lg text-right'>
+                            {country.name.official}
                         </p>
                     </div>
                     <div className='flex justify-between border-b border-gray-300 bg-gray-100 px-4 pb-3 pt-4'>

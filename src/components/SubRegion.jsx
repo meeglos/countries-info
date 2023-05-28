@@ -18,6 +18,7 @@ export default function SubRegion() {
                     className='form-select border-dotted rounded-lg w-2/3'
                     onChange={handleSubRegionChange}
                 >
+                    <option value='0'>Todos</option>
                     {subRegions.map(subregion => (
                         <option
                             key={subregion.id}
