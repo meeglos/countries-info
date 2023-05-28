@@ -362,8 +362,7 @@ const countries = [
         continents: ['Asia'],
         flags: {
             png: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Flag_of_the_Taliban.svg/320px-Flag_of_the_Taliban.svg.png',
-            // svg: 'https://upload.wikimedia.org/wikipedia/commons/5/5c/Flag_of_the_Taliban.svg',
-            svg: 'https://upload.wikimedia.org/wikipedia/commons/c/cd/Flag_of_Afghanistan_%282013%E2%80%932021%29.svg',
+            svg: 'https://upload.wikimedia.org/wikipedia/commons/5/5c/Flag_of_the_Taliban.svg',
             alt: 'The flag of the Islamic Emirate of Afghanistan has a white field with Arabic inscriptions — the Shahada — in black across its center.',
         },
         coatOfArms: {
@@ -12860,6 +12859,181 @@ const countries = [
         startOfWeek: 'monday',
         capitalInfo: {
             latlng: [-13.97, 33.78],
+        },
+    },
+    {
+        name: {
+            common: 'Åland Islands',
+            official: 'Åland Islands',
+            nativeName: {
+                swe: {
+                    official: 'Landskapet Åland',
+                    common: 'Åland',
+                },
+            },
+        },
+        tld: ['.ax'],
+        cca2: 'AX',
+        ccn3: '248',
+        cca3: 'ALA',
+        independent: false,
+        status: 'officially-assigned',
+        unMember: false,
+        currencies: {
+            EUR: {
+                name: 'Euro',
+                symbol: '€',
+            },
+        },
+        idd: {
+            root: '+3',
+            suffixes: ['5818'],
+        },
+        capital: ['Mariehamn'],
+        altSpellings: ['AX', 'Aaland', 'Aland', 'Ahvenanmaa'],
+        region: 'Europe',
+        subregion: 'Northern Europe',
+        languages: {
+            swe: 'Swedish',
+        },
+        translations: {
+            ara: {
+                official: 'جزر أولاند',
+                common: 'جزر أولاند',
+            },
+            bre: {
+                official: 'Inizi Åland',
+                common: 'Åland',
+            },
+            ces: {
+                official: 'Ålandské ostrovy',
+                common: 'Ålandy',
+            },
+            cym: {
+                official: 'Åland Islands',
+                common: 'Åland Islands',
+            },
+            deu: {
+                official: 'Åland-Inseln',
+                common: 'Åland',
+            },
+            est: {
+                official: 'Ahvenamaa maakond',
+                common: 'Ahvenamaa',
+            },
+            fin: {
+                official: 'Ahvenanmaan maakunta',
+                common: 'Ahvenanmaa',
+            },
+            fra: {
+                official: 'Ahvenanmaa',
+                common: 'Ahvenanmaa',
+            },
+            hrv: {
+                official: 'Aland Islands',
+                common: 'Ålandski otoci',
+            },
+            hun: {
+                official: 'Åland-szigetek',
+                common: 'Åland-szigetek',
+            },
+            ita: {
+                official: 'Isole Åland',
+                common: 'Isole Aland',
+            },
+            jpn: {
+                official: 'オーランド諸島',
+                common: 'オーランド諸島',
+            },
+            kor: {
+                official: '올란드 제도',
+                common: '올란드 제도',
+            },
+            nld: {
+                official: 'Åland eilanden',
+                common: 'Ålandeilanden',
+            },
+            per: {
+                official: 'جزایر الند',
+                common: 'جزایر الند',
+            },
+            pol: {
+                official: 'Wyspy Alandzkie',
+                common: 'Wyspy Alandzkie',
+            },
+            por: {
+                official: 'Ilhas Åland',
+                common: 'Alândia',
+            },
+            rus: {
+                official: 'Аландские острова',
+                common: 'Аландские острова',
+            },
+            slk: {
+                official: 'Alandské ostrovy',
+                common: 'Alandy',
+            },
+            spa: {
+                official: 'Islas Åland',
+                common: 'Alandia',
+            },
+            srp: {
+                official: 'Оландска Острва',
+                common: 'Оландска Острва',
+            },
+            swe: {
+                official: 'Åland',
+                common: 'Åland',
+            },
+            tur: {
+                official: 'Åland Adaları',
+                common: 'Åland',
+            },
+            urd: {
+                official: 'جزائر اولند',
+                common: 'جزائر اولند',
+            },
+            zho: {
+                official: '奥兰群岛',
+                common: '奥兰群岛',
+            },
+        },
+        latlng: [60.116667, 19.9],
+        landlocked: false,
+        area: 1580.0,
+        demonyms: {
+            eng: {
+                f: 'Ålandish',
+                m: 'Ålandish',
+            },
+            fra: {
+                f: 'Ålandaise',
+                m: 'Ålandais',
+            },
+        },
+        flag: '🇦🇽',
+        maps: {
+            googleMaps: 'https://goo.gl/maps/ewFb3vYsfUmVCoSb8',
+            openStreetMaps: 'https://www.openstreetmap.org/relation/1650407',
+        },
+        population: 29458,
+        car: {
+            signs: [''],
+            side: 'right',
+        },
+        timezones: ['UTC+02:00'],
+        continents: ['Europe'],
+        flags: {
+            png: 'https://flagcdn.com/w320/ax.png',
+            svg: 'https://flagcdn.com/ax.svg',
+        },
+        coatOfArms: {
+            png: 'https://mainfacts.com/media/images/coats_of_arms/ax.png',
+            svg: 'https://mainfacts.com/media/images/coats_of_arms/ax.svg',
+        },
+        startOfWeek: 'monday',
+        capitalInfo: {
+            latlng: [60.12, 19.9],
         },
     },
     {
