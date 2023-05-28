@@ -1,15 +1,7 @@
 import useCountry from '../hooks/useCountry';
 
 export default function SubRegion() {
-    const {
-        regions,
-        regionActual,
-        subRegions,
-        countries,
-        setCountries,
-        handleSubRegionChange,
-        regionSelected,
-    } = useCountry();
+    const { subRegions, handleSubRegionChange } = useCountry();
 
     return (
         <>

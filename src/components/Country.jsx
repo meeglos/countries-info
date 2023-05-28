@@ -1,8 +1,8 @@
-// import { countries as countriesDB } from '../data/countries';
 import useCountry from '../hooks/useCountry';
 
 export default function Country() {
-    const { regionActual, countries } = useCountry();
+    const { countries } = useCountry();
+
     const filteredCountries = countries.sort((a, b) =>
         a.translations.spa.common.localeCompare(b.translations.spa.common)
     );

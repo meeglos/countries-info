@@ -8,7 +8,6 @@ const CountryContext = createContext();
 const CountryProvider = ({ children }) => {
     const [regions, setRegions] = useState(regionsDB);
     const [subRegions, setSubRegions] = useState(subregionsDB);
-    // const [regionSelected, setRegionSelected] = useState(regions[0]);
     const [countries, setCountries] = useState(countriesDB);
     const [filteredCountries, setFilteredCountries] = useState();
 
@@ -17,10 +16,9 @@ const CountryProvider = ({ children }) => {
         const filteredRegion = regions.filter(
             region => region.id.toString() === id
         )[0];
-        // console.log(region[0].slug);
 
         // Filtrar los países por la región seleccionada
-        const filteredCountries = countries.filter(
+        const filteredCountries = countriesDB.filter(
             country => country.region === filteredRegion.slug
         );
 
@@ -30,34 +28,29 @@ const CountryProvider = ({ children }) => {
         );
 
         // Filtro las subregiones según la región seleccionada
-        const filteredSubRegions = subRegions.filter(
+        const filteredSubRegions = subregionsDB.filter(
             subregion => subregion.region_id.toString() === id
         );
 
-        console.log(filteredRegion);
-        console.log(filteredSubRegions);
-
-        // setCountries(filteredCountries);
         setSubRegions(filteredSubRegions);
-        // setFilteredCountries(aoc);
         setCountries(aoc);
     };
 
     const handleSubRegionChange = event => {
         const subregionId = event.target.value;
-        const subregion = subRegions.filter(
+        const subregion = subregionsDB.filter(
             subregion => subregion.id.toString() === subregionId
         )[0];
-        // console.log(subregion);
-        // return 0;
+
         // Filtrar los países por la subregión seleccionada
-        const filteredCountries = countries.filter(
+        const filteredCountries = countriesDB.filter(
             country => country.subregion === subregion.slug
         );
+
+        // Ordenamos los países alfabéticamente
         const aoc = filteredCountries.sort((a, b) =>
             a.translations.spa.common.localeCompare(b.translations.spa.common)
         );
-        // console.log(filteredCountries);
 
         setFilteredCountries(aoc);
         setCountries(aoc);

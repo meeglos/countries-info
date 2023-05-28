@@ -6,12 +6,7 @@ import Language from '../components/Language';
 import Search from '../components/Search';
 import Country from '../components/Country';
 
-// import { countries as data } from '../data/countries';
-
 export default function Layout() {
-    // const { regions, regionSelected } = useCountry();
-    // const { subregions, subregionActual } = useCountry();
-
     return (
         <div className='flex flex-col items-center justify-center p-5'>
             <h1 className='font-lora font-bold text-4xl'>
