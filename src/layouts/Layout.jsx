@@ -7,6 +7,7 @@ import Search from '../components/Search';
 import Country from '../components/Country';
 
 export default function Layout() {
+    const { countries, filteredRegion } = useCountry();
     return (
         <div className='flex flex-col items-center justify-center p-5'>
             <h1 className='font-lora font-bold text-4xl'>
@@ -32,9 +33,11 @@ export default function Layout() {
                     <SubRegion />
                 </div>
             </div>
-            <div className='flex flex-col w-full lg:w-2/3 p-2'>
-                <div className='w-full my-2'>
-                    <p>Mostrando los paises de ... </p>
+            <div className='flex flex-col w-full lg:w-2/3 '>
+                <div className='w-full my-3'>
+                    <p className='text-bold font-dm text-sm'>
+                        Mostrando {Object(countries).length} países
+                    </p>
                 </div>
                 <div className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-4'>
                     <Country />

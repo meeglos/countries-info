@@ -10,6 +10,7 @@ const CountryProvider = ({ children }) => {
     const [subRegions, setSubRegions] = useState(subregionsDB);
     const [countries, setCountries] = useState(countriesDB);
     const [filteredCountries, setFilteredCountries] = useState();
+    const [filteredRegion, setFilteredRegion] = useState();
 
     const handleRegionChange = event => {
         const id = event.target.value;
@@ -34,6 +35,7 @@ const CountryProvider = ({ children }) => {
 
         setSubRegions(filteredSubRegions);
         setCountries(aoc);
+        setFilteredRegion(filteredRegion);
     };
 
     const handleSubRegionChange = event => {
@@ -65,6 +67,7 @@ const CountryProvider = ({ children }) => {
                 handleRegionChange,
                 handleSubRegionChange,
                 filteredCountries,
+                filteredRegion,
             }}
         >
             {children}
