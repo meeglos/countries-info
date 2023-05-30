@@ -2097,6 +2097,7 @@ const countries = [
             '中華人民共和國澳門特別行政區',
             'Região Administrativa Especial de Macau da República Popular da China',
         ],
+        capital: ['Ciudad del Santo Nombre de Dios de Macao'],
         region: 'Asia',
         subregion: 'Eastern Asia',
         languages: {

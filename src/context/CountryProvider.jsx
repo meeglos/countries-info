@@ -12,6 +12,18 @@ const CountryProvider = ({ children }) => {
     const [filteredCountries, setFilteredCountries] = useState();
     const [filteredRegion, setFilteredRegion] = useState();
 
+    const handleSearchKeyUp = event => {
+        const search = event.target.value;
+
+        const filteredCountries = countriesDB.filter(country =>
+            country.translations.spa.common
+                .toLowerCase()
+                .includes(search.toLowerCase())
+        );
+
+        setCountries(filteredCountries);
+    };
+
     const handleRegionChange = event => {
         const id = event.target.value;
         const filteredRegion = regions.filter(
@@ -68,6 +80,7 @@ const CountryProvider = ({ children }) => {
                 handleSubRegionChange,
                 filteredCountries,
                 filteredRegion,
+                handleSearchKeyUp,
             }}
         >
             {children}
