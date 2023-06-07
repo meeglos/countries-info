@@ -34,7 +34,7 @@ export default function Layout() {
                     <div className='w-full lg:w-1/2'>
                         <Search />
                     </div>
-                    <div className='w-full lg:w-2/3'>
+                    {/* <div className='w-full lg:w-2/3'>
                         <div className='p-2'>
                             <button
                                 onClick={() => {
@@ -76,7 +76,7 @@ export default function Layout() {
                                 </svg>
                             </button>
                         </div>
-                    </div>
+                    </div> */}
                 </div>
                 <div className='flex flex-col lg:flex-row w-full lg:w-2/3 lg:justify-between  p-2 space-y-2 items-center border rounded-lg border-dotted border-slate-300'>
                     <div className='w-full lg:w-1/2'>
