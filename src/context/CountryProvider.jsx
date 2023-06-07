@@ -5,17 +5,75 @@ import { countries as countriesDB } from '../data/countries';
 
 const CountryContext = createContext();
 
+const independentCountries = countriesDB.filter(
+    obj => obj.independent === true
+);
+
 const CountryProvider = ({ children }) => {
     const [regions, setRegions] = useState(regionsDB);
     const [subRegions, setSubRegions] = useState(subregionsDB);
-    const [countries, setCountries] = useState(countriesDB);
+    const [countries, setCountries] = useState(independentCountries);
     const [filteredCountries, setFilteredCountries] = useState();
     const [filteredRegion, setFilteredRegion] = useState();
+    const [modal, setModal] = useState(false);
+    const [regionCfg, setRegionCfg] = useState(0);
+    const [timerCfg, setTimerCfg] = useState(0);
+    const [questionCfg, setQuestionCfg] = useState(5);
+    const [isHidden, setIsHidden] = useState(false);
+    const [randomElements, setRandomElements] = useState();
+
+    // setCountries(extractedValues);
+
+    const handleSetRegion = event => {
+        const regionCfg = event.target.value;
+        setRegionCfg(regionCfg);
+        console.log(regionCfg);
+    };
+
+    const handleSetTimer = event => {
+        const timerCfg = event.target.value;
+        setTimerCfg(timerCfg);
+        console.log(timerCfg);
+    };
+
+    const handleSetQuestions = event => {
+        const questionCfg = event.target.value;
+        setQuestionCfg(questionCfg);
+        console.log(questionCfg);
+    };
+
+    const handleClickStart = () => {
+        // console.log('Jugaré con ' + regionCfg);
+        const title = 'Jugando con' + regionCfg;
+        const questions = [];
+
+        // ocultamos configuración y mostramos las preguntas
+        setIsHidden(true);
+
+        // mostramos un spinner con mensaje mientras se generan las preguntas
+
+        // seleccionamos las preguntas en base a questionCfg y regionCfg
+        const randomIndices = [];
+        while (randomIndices.length < questionCfg) {
+            const randomIndex = Math.floor(Math.random() * countries.length);
+            console.log(Math.random() * countries.length);
+            if (!randomIndices.includes(randomIndex)) {
+                randomIndices.push(randomIndex);
+            }
+        }
+        const randomElements = randomIndices.map(index => countries[index]);
+        setRandomElements(randomElements);
+        // mostramos la pregunta 1, el puntaje acumulado, <pregunta 1 de 8>
+    };
+
+    const handleClickModal = () => {
+        setModal(!modal);
+    };
 
     const handleSearchKeyUp = event => {
         const search = event.target.value;
 
-        const filteredCountries = countriesDB.filter(country =>
+        const filteredCountries = independentCountries.filter(country =>
             country.translations.spa.common
                 .toLowerCase()
                 .includes(search.toLowerCase())
@@ -26,48 +84,82 @@ const CountryProvider = ({ children }) => {
 
     const handleRegionChange = event => {
         const id = event.target.value;
-        const filteredRegion = regions.filter(
-            region => region.id.toString() === id
-        )[0];
 
-        // Filtrar los países por la región seleccionada
-        const filteredCountries = countriesDB.filter(
-            country => country.region === filteredRegion.slug
-        );
+        if (id !== '0') {
+            const filteredRegion = regions.filter(
+                region => region.id.toString() === id
+            )[0];
 
-        // Ordeno alfabéticamente los países - alfabetically ordered countries
-        const aoc = filteredCountries.sort((a, b) =>
-            a.translations.spa.common.localeCompare(b.translations.spa.common)
-        );
+            // Filtro los países por la región seleccionada
+            const filteredCountries = independentCountries.filter(
+                country => country.region === filteredRegion.slug
+            );
 
-        // Filtro las subregiones según la región seleccionada
-        const filteredSubRegions = subregionsDB.filter(
-            subregion => subregion.region_id.toString() === id
-        );
+            // Ordeno alfabéticamente los países - alfabetically ordered countries
+            const aoc = filteredCountries.sort((a, b) =>
+                a.translations.spa.common.localeCompare(
+                    b.translations.spa.common
+                )
+            );
 
-        setSubRegions(filteredSubRegions);
-        setCountries(aoc);
-        setFilteredRegion(filteredRegion);
+            // Filtro las subregiones según la región seleccionada
+            const filteredSubRegions = subregionsDB.filter(
+                subregion => subregion.region_id.toString() === id
+            );
+
+            setCountries(aoc);
+            setFilteredRegion(filteredRegion);
+            setSubRegions(filteredSubRegions);
+        } else {
+            console.log('ahora vuelvo al inicio');
+            const independentCountries = countriesDB.filter(
+                obj => obj.independent === true
+            );
+
+            const aoc = independentCountries.sort((a, b) =>
+                a.translations.spa.common.localeCompare(
+                    b.translations.spa.common
+                )
+            );
+
+            setCountries(aoc);
+        }
     };
 
     const handleSubRegionChange = event => {
         const subregionId = event.target.value;
-        const subregion = subregionsDB.filter(
-            subregion => subregion.id.toString() === subregionId
-        )[0];
 
-        // Filtrar los países por la subregión seleccionada
-        const filteredCountries = countriesDB.filter(
-            country => country.subregion === subregion.slug
-        );
+        if (subregionId !== '0') {
+            const subregion = subregionsDB.filter(
+                subregion => subregion.id.toString() === subregionId
+            )[0];
 
-        // Ordenamos los países alfabéticamente
-        const aoc = filteredCountries.sort((a, b) =>
-            a.translations.spa.common.localeCompare(b.translations.spa.common)
-        );
+            // Filtrar los países por la subregión seleccionada
+            const filteredCountries = independentCountries.filter(
+                country => country.subregion === subregion.slug
+            );
 
-        setFilteredCountries(aoc);
-        setCountries(aoc);
+            // Ordenamos los países alfabéticamente
+            const aoc = filteredCountries.sort((a, b) =>
+                a.translations.spa.common.localeCompare(
+                    b.translations.spa.common
+                )
+            );
+
+            setFilteredCountries(aoc);
+            setCountries(aoc);
+        } else {
+            const filteredCountries = independentCountries.filter(
+                country => country.region === filteredRegion.slug
+            );
+
+            const aoc = filteredCountries.sort((a, b) =>
+                a.translations.spa.common.localeCompare(
+                    b.translations.spa.common
+                )
+            );
+            setCountries(aoc);
+        }
     };
 
     return (
@@ -81,6 +173,18 @@ const CountryProvider = ({ children }) => {
                 filteredCountries,
                 filteredRegion,
                 handleSearchKeyUp,
+                modal,
+                handleClickModal,
+                handleSetRegion,
+                handleSetTimer,
+                handleSetQuestions,
+                handleClickStart,
+                regionCfg,
+                timerCfg,
+                questionCfg,
+                isHidden,
+                randomElements,
+                independentCountries,
             }}
         >
             {children}

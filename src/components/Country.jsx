@@ -3,7 +3,11 @@ import useCountry from '../hooks/useCountry';
 export default function Country() {
     const { countries } = useCountry();
 
-    const filteredCountries = countries.sort((a, b) =>
+    const independentCountries = countries.filter(
+        obj => obj.independent === true
+    );
+    // console.log(independentCountries);
+    const filteredCountries = independentCountries.sort((a, b) =>
         a.translations.spa.common.localeCompare(b.translations.spa.common)
     );
 
@@ -21,7 +25,7 @@ export default function Country() {
                         }}
                     >
                         <p className='bg-black px-2 py-1 text-xs tracking-tight text-white opacity-75 shadow-lg absolute right-0 bottom-0 rounded-tl-lg text-right'>
-                            {country.name.official}
+                            {country.name.official} ({country?.capital?.eng})
                         </p>
                     </div>
                     <div className='flex justify-between border-b border-gray-300 bg-gray-100 px-4 pb-3 pt-4'>
@@ -47,8 +51,8 @@ export default function Country() {
                                 <p className='tracking-widest text-xs'>
                                     Capital:{' '}
                                 </p>
-                                <p className='uppercase -mt-2 font-lora'>
-                                    {country.capital}
+                                <p className='-mt-2 font-lora'>
+                                    {country?.capital?.spa}
                                 </p>
                             </div>
                         </div>
