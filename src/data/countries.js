@@ -28,7 +28,10 @@ const countries = [
             root: '+3',
             suffixes: ['4'],
         },
-        capital: ['Madrid'],
+        capital: {
+            eng: 'Madrid',
+            spa: 'Madrid',
+        },
         altSpellings: ['ES', 'Kingdom of Spain', 'Reino de España'],
         region: 'Europe',
         subregion: 'Southern Europe',
@@ -222,7 +225,10 @@ const countries = [
             root: '+9',
             suffixes: ['3'],
         },
-        capital: ['Kabul'],
+        capital: {
+            eng: 'Kabul',
+            spa: 'Kabul',
+        },
         altSpellings: ['AF', 'Afġānistān'],
         region: 'Asia',
         subregion: 'Southern Asia',
@@ -407,7 +413,10 @@ const countries = [
             root: '+2',
             suffixes: ['49'],
         },
-        capital: ['Khartoum'],
+        capital: {
+            eng: 'Khartoum',
+            spa: 'Jartum',
+        },
         altSpellings: ['SD', 'Republic of the Sudan', 'Jumhūrīyat as-Sūdān'],
         region: 'Africa',
         subregion: 'Northern Africa',
@@ -594,7 +603,10 @@ const countries = [
             root: '+3',
             suffixes: ['59'],
         },
-        capital: ['Sofia'],
+        capital: {
+            eng: 'Sofia',
+            spa: 'Sofía',
+        },
         altSpellings: ['BG', 'Republic of Bulgaria', 'Република България'],
         region: 'Europe',
         subregion: 'Southeast Europe',
@@ -780,7 +792,10 @@ const countries = [
             root: '+4',
             suffixes: ['9'],
         },
-        capital: ['Berlin'],
+        capital: {
+            eng: 'Berlin',
+            spa: 'Berlín',
+        },
         altSpellings: [
             'DE',
             'Federal Republic of Germany',
@@ -980,7 +995,10 @@ const countries = [
             root: '+3',
             suffixes: ['70'],
         },
-        capital: ['Vilnius'],
+        capital: {
+            eng: 'Vilnius',
+            spa: 'Vilna',
+        },
         altSpellings: ['LT', 'Republic of Lithuania', 'Lietuvos Respublika'],
         region: 'Europe',
         subregion: 'Northern Europe',
@@ -1165,7 +1183,10 @@ const countries = [
             root: '+2',
             suffixes: ['62'],
         },
-        capital: ['Mamoudzou'],
+        capital: {
+            eng: 'Mamoudzou',
+            spa: 'Mamoudzou',
+        },
         altSpellings: ['YT', 'Department of Mayotte', 'Département de Mayotte'],
         region: 'Africa',
         subregion: 'Eastern Africa',
@@ -1346,7 +1367,10 @@ const countries = [
             root: '+6',
             suffixes: ['92'],
         },
-        capital: ['Majuro'],
+        capital: {
+            eng: 'Majuro',
+            spa: 'Majuro',
+        },
         altSpellings: [
             'MH',
             'Republic of the Marshall Islands',
@@ -1528,7 +1552,10 @@ const countries = [
             root: '+4',
             suffixes: ['8'],
         },
-        capital: ['Warsaw'],
+        capital: {
+            eng: 'Warsaw',
+            spa: 'Varsovia',
+        },
         altSpellings: ['PL', 'Republic of Poland', 'Rzeczpospolita Polska'],
         region: 'Europe',
         subregion: 'Central Europe',
@@ -1721,7 +1748,10 @@ const countries = [
             root: '+6',
             suffixes: ['90'],
         },
-        capital: ['Fakaofo'],
+        capital: {
+            eng: 'Fakaofo',
+            spa: 'Nukunonu',
+        },
         altSpellings: ['TK'],
         region: 'Oceania',
         subregion: 'Polynesia',
@@ -1896,7 +1926,10 @@ const countries = [
             root: '+2',
             suffixes: ['55'],
         },
-        capital: ['Dodoma'],
+        capital: {
+            eng: 'Dodoma',
+            spa: 'Dodoma',
+        },
         altSpellings: [
             'TZ',
             'Tanzania, United Republic of',
@@ -2097,7 +2130,10 @@ const countries = [
             '中華人民共和國澳門特別行政區',
             'Região Administrativa Especial de Macau da República Popular da China',
         ],
-        capital: ['Ciudad del Santo Nombre de Dios de Macao'],
+        capital: {
+            eng: 'Cidade do Santo Nome de Deus de Macau',
+            spa: 'Ciudad del Santo Nombre de Dios de Macao',
+        },
         region: 'Asia',
         subregion: 'Eastern Asia',
         languages: {
@@ -2286,7 +2322,10 @@ const countries = [
             root: '+6',
             suffixes: ['70'],
         },
-        capital: ['Dili'],
+        capital: {
+            eng: 'Dili',
+            spa: 'Dili',
+        },
         altSpellings: [
             'TL',
             'East Timor',
@@ -2474,7 +2513,10 @@ const countries = [
             root: '+2',
             suffixes: ['28'],
         },
-        capital: ['Lomé'],
+        capital: {
+            eng: 'Lomé',
+            spa: 'Lomé',
+        },
         altSpellings: [
             'TG',
             'Togolese',
@@ -2665,7 +2707,10 @@ const countries = [
             root: '+4',
             suffixes: ['20'],
         },
-        capital: ['Prague'],
+        capital: {
+            eng: 'Prague',
+            spa: 'Praga',
+        },
         altSpellings: ['CZ', 'Česká republika', 'Česko'],
         region: 'Europe',
         subregion: 'Central Europe',
@@ -2852,7 +2897,10 @@ const countries = [
             root: '+3',
             suffixes: ['77'],
         },
-        capital: ['Monaco'],
+        capital: {
+            eng: 'Monaco',
+            spa: 'Mónaco',
+        },
         altSpellings: ['MC', 'Principality of Monaco', 'Principauté de Monaco'],
         region: 'Europe',
         subregion: 'Western Europe',
@@ -3038,7 +3086,10 @@ const countries = [
             root: '+2',
             suffixes: ['56'],
         },
-        capital: ['Kampala'],
+        capital: {
+            eng: 'Kampala',
+            spa: 'Kampala',
+        },
         altSpellings: ['UG', 'Republic of Uganda', 'Jamhuri ya Uganda'],
         region: 'Africa',
         subregion: 'Eastern Africa',
@@ -3221,7 +3272,10 @@ const countries = [
             root: '+1',
             suffixes: ['868'],
         },
-        capital: ['Port of Spain'],
+        capital: {
+            eng: 'Port of Spain',
+            spa: 'Puerto España',
+        },
         altSpellings: ['TT', 'Republic of Trinidad and Tobago'],
         region: 'Americas',
         subregion: 'Caribbean',
@@ -3402,7 +3456,10 @@ const countries = [
             root: '+2',
             suffixes: ['13'],
         },
-        capital: ['Algiers'],
+        capital: {
+            eng: 'Algiers',
+            spa: 'Argel',
+        },
         altSpellings: ['DZ', 'Dzayer', 'Algérie'],
         region: 'Africa',
         subregion: 'Northern Africa',
@@ -3588,7 +3645,10 @@ const countries = [
             root: '+3',
             suffixes: ['80'],
         },
-        capital: ['Kyiv'],
+        capital: {
+            eng: 'Kyiv',
+            spa: 'Kiev',
+        },
         altSpellings: ['UA', 'Ukrayina'],
         region: 'Europe',
         subregion: 'Eastern Europe',
@@ -3774,7 +3834,10 @@ const countries = [
             root: '+3',
             suffixes: ['72'],
         },
-        capital: ['Tallinn'],
+        capital: {
+            eng: 'Tallinn',
+            spa: 'Tallin',
+        },
         altSpellings: ['EE', 'Eesti', 'Republic of Estonia', 'Eesti Vabariik'],
         region: 'Europe',
         subregion: 'Northern Europe',
@@ -3960,7 +4023,10 @@ const countries = [
             root: '+3',
             suffixes: ['0'],
         },
-        capital: ['Athens'],
+        capital: {
+            eng: 'Athens',
+            spa: 'Atenas',
+        },
         altSpellings: [
             'GR',
             'Elláda',
@@ -4151,7 +4217,10 @@ const countries = [
             root: '+2',
             suffixes: ['22'],
         },
-        capital: ['Nouakchott'],
+        capital: {
+            eng: 'Nouakchott',
+            spa: 'Nuakchot',
+        },
         altSpellings: [
             'MR',
             'Islamic Republic of Mauritania',
@@ -4337,7 +4406,10 @@ const countries = [
             root: '+9',
             suffixes: ['95'],
         },
-        capital: ['Tbilisi'],
+        capital: {
+            eng: 'Tbilisi',
+            spa: 'Tiflis',
+        },
         altSpellings: ['GE', 'Sakartvelo'],
         region: 'Asia',
         subregion: 'Western Asia',
@@ -4742,7 +4814,10 @@ const countries = [
             root: '+2',
             suffixes: ['64'],
         },
-        capital: ['Windhoek'],
+        capital: {
+            eng: 'Windhoek',
+            spa: 'Windhoek',
+        },
         altSpellings: ['NA', 'Namibië', 'Republic of Namibia'],
         region: 'Africa',
         subregion: 'Southern Africa',
@@ -4932,7 +5007,10 @@ const countries = [
             root: '+3',
             suffixes: ['89'],
         },
-        capital: ['Skopje'],
+        capital: {
+            eng: 'Skopje',
+            spa: 'Skopie',
+        },
         altSpellings: [
             'MK',
             'The former Yugoslav Republic of Macedonia',
@@ -5132,7 +5210,10 @@ const countries = [
             root: '+2',
             suffixes: ['30'],
         },
-        capital: ['Port Louis'],
+        capital: {
+            eng: 'Port Louis',
+            spa: 'Port-Louis',
+        },
         altSpellings: ['MU', 'Republic of Mauritius', 'République de Maurice'],
         region: 'Africa',
         subregion: 'Eastern Africa',
@@ -5323,7 +5404,10 @@ const countries = [
             root: '+6',
             suffixes: ['86'],
         },
-        capital: ['South Tarawa'],
+        capital: {
+            eng: 'South Tarawa',
+            spa: 'Tarawa',
+        },
         altSpellings: ['KI', 'Republic of Kiribati', 'Ribaberiki Kiribati'],
         region: 'Oceania',
         subregion: 'Micronesia',
@@ -5512,7 +5596,10 @@ const countries = [
             root: '+2',
             suffixes: ['42'],
         },
-        capital: ['Brazzaville'],
+        capital: {
+            eng: 'Brazzaville',
+            spa: 'Brazzaville',
+        },
         altSpellings: ['CG', 'Congo', 'Congo-Brazzaville'],
         region: 'Africa',
         subregion: 'Middle Africa',
@@ -5701,7 +5788,10 @@ const countries = [
             root: '+2',
             suffixes: ['40'],
         },
-        capital: ['Malabo'],
+        capital: {
+            eng: 'Malabo',
+            spa: 'Malabo',
+        },
         altSpellings: [
             'GQ',
             'Republic of Equatorial Guinea',
@@ -6416,7 +6506,10 @@ const countries = [
             root: '+6',
             suffixes: ['80'],
         },
-        capital: ['Ngerulmud'],
+        capital: {
+            eng: 'Ngerulmud',
+            spa: 'Melekeok',
+        },
         altSpellings: ['PW', 'Republic of Palau', 'Beluu er a Belau'],
         region: 'Oceania',
         subregion: 'Micronesia',
@@ -6598,7 +6691,10 @@ const countries = [
             root: '+9',
             suffixes: ['74'],
         },
-        capital: ['Doha'],
+        capital: {
+            eng: 'Doha',
+            spa: 'Doha',
+        },
         altSpellings: ['QA', 'State of Qatar', 'Dawlat Qaṭar'],
         region: 'Asia',
         subregion: 'Western Asia',
@@ -7095,7 +7191,10 @@ const countries = [
                 '989',
             ],
         },
-        capital: ['Washington, D.C.'],
+        capital: {
+            eng: 'Washington, D.C.',
+            spa: 'Washington, D.C.',
+        },
         altSpellings: ['US', 'USA', 'United States of America'],
         region: 'Americas',
         subregion: 'North America',
@@ -7475,7 +7574,10 @@ const countries = [
             root: '+2',
             suffixes: ['67'],
         },
-        capital: ['Gaborone'],
+        capital: {
+            eng: 'Gaborone',
+            spa: 'Gaborone',
+        },
         altSpellings: ['BW', 'Republic of Botswana', 'Lefatshe la Botswana'],
         region: 'Africa',
         subregion: 'Southern Africa',
@@ -7562,7 +7664,7 @@ const countries = [
             },
             spa: {
                 official: 'República de Botswana',
-                common: 'Botswana',
+                common: 'Botsuana',
             },
             srp: {
                 official: 'Република Боцвана',
@@ -7892,7 +7994,10 @@ const countries = [
             root: '+2',
             suffixes: ['7'],
         },
-        capital: ['Pretoria', 'Bloemfontein', 'Cape Town'],
+        capital: {
+            eng: ['Pretoria', 'Bloemfontein', 'Cape Town'],
+            spa: 'Ciudad del Cabo',
+        },
         altSpellings: ['ZA', 'RSA', 'Suid-Afrika', 'Republic of South Africa'],
         region: 'Africa',
         subregion: 'Southern Africa',
@@ -8088,7 +8193,10 @@ const countries = [
             root: '+8',
             suffixes: ['4'],
         },
-        capital: ['Hanoi'],
+        capital: {
+            eng: 'Hanoi',
+            spa: 'Hanói',
+        },
         altSpellings: [
             'VN',
             'Socialist Republic of Vietnam',
@@ -8477,7 +8585,10 @@ const countries = [
             root: '+5',
             suffixes: ['92'],
         },
-        capital: ['Georgetown'],
+        capital: {
+            eng: 'Georgetown',
+            spa: 'Georgetown',
+        },
         altSpellings: ['GY', 'Co-operative Republic of Guyana'],
         region: 'Americas',
         subregion: 'South America',
@@ -8667,7 +8778,10 @@ const countries = [
             root: '+6',
             suffixes: ['88'],
         },
-        capital: ['Funafuti'],
+        capital: {
+            eng: 'Funafuti',
+            spa: 'Funafuti',
+        },
         altSpellings: ['TV'],
         region: 'Oceania',
         subregion: 'Polynesia',
@@ -8848,7 +8962,10 @@ const countries = [
             root: '+9',
             suffixes: ['62'],
         },
-        capital: ['Amman'],
+        capital: {
+            eng: 'Amman',
+            spa: 'Amán',
+        },
         altSpellings: [
             'JO',
             'Hashemite Kingdom of Jordan',
@@ -9046,7 +9163,10 @@ const countries = [
             root: '+6',
             suffixes: ['75'],
         },
-        capital: ['Port Moresby'],
+        capital: {
+            eng: 'Port Moresby',
+            spa: 'Port Moresby',
+        },
         altSpellings: [
             'PG',
             'Independent State of Papua New Guinea',
@@ -9242,7 +9362,10 @@ const countries = [
             root: '+1',
             suffixes: ['242'],
         },
-        capital: ['Nassau'],
+        capital: {
+            eng: 'Nassau',
+            spa: 'Nasáu',
+        },
         altSpellings: ['BS', 'Commonwealth of the Bahamas'],
         region: 'Americas',
         subregion: 'Caribbean',
@@ -9420,7 +9543,10 @@ const countries = [
             root: '+2',
             suffixes: ['38'],
         },
-        capital: ['Praia'],
+        capital: {
+            eng: 'Praia',
+            spa: 'Praia',
+        },
         altSpellings: [
             'CV',
             'Republic of Cabo Verde',
@@ -9609,7 +9735,10 @@ const countries = [
             root: '+9',
             suffixes: ['68'],
         },
-        capital: ['Muscat'],
+        capital: {
+            eng: 'Muscat',
+            spa: 'Mascate',
+        },
         altSpellings: ['OM', 'Sultanate of Oman', 'Salṭanat ʻUmān'],
         region: 'Asia',
         subregion: 'Western Asia',
@@ -9792,7 +9921,10 @@ const countries = [
             root: '+5',
             suffixes: ['8'],
         },
-        capital: ['Caracas'],
+        capital: {
+            eng: 'Caracas',
+            spa: 'Caracas',
+        },
         altSpellings: [
             'VE',
             'Bolivarian Republic of Venezuela',
@@ -9995,7 +10127,10 @@ const countries = [
             root: '+5',
             suffixes: ['91'],
         },
-        capital: ['Sucre'],
+        capital: {
+            eng: 'Sucre',
+            spa: 'Sucre',
+        },
         altSpellings: [
             'BO',
             'Buliwya',
@@ -10190,7 +10325,10 @@ const countries = [
             root: '+2',
             suffixes: ['0'],
         },
-        capital: ['Cairo'],
+        capital: {
+            eng: 'Cairo',
+            spa: 'El Cairo',
+        },
         altSpellings: ['EG', 'Arab Republic of Egypt'],
         region: 'Africa',
         subregion: 'Northern Africa',
@@ -10380,7 +10518,10 @@ const countries = [
             root: '+1',
             suffixes: [''],
         },
-        capital: ['Ottawa'],
+        capital: {
+            eng: 'Ottawa',
+            spa: 'Ottawa',
+        },
         altSpellings: ['CA'],
         region: 'Americas',
         subregion: 'North America',
@@ -10582,7 +10723,10 @@ const countries = [
             root: '+4',
             suffixes: ['7'],
         },
-        capital: ['Oslo'],
+        capital: {
+            eng: 'Oslo',
+            spa: 'Oslo',
+        },
         altSpellings: [
             'NO',
             'Norge',
@@ -10781,7 +10925,10 @@ const countries = [
             root: '+9',
             suffixes: ['96'],
         },
-        capital: ['Bishkek'],
+        capital: {
+            eng: 'Bishkek',
+            spa: 'Biskek',
+        },
         altSpellings: [
             'KG',
             'Киргизия',
@@ -10974,7 +11121,10 @@ const countries = [
             root: '+3',
             suffixes: ['74'],
         },
-        capital: ['Yerevan'],
+        capital: {
+            eng: 'Yerevan',
+            spa: 'Ereván',
+        },
         altSpellings: [
             'AM',
             'Hayastan',
@@ -11181,7 +11331,10 @@ const countries = [
             root: '+2',
             suffixes: ['43'],
         },
-        capital: ['Kinshasa'],
+        capital: {
+            eng: 'Kinshasa',
+            spa: 'Kinsasa',
+        },
         altSpellings: [
             'CD',
             'DR Congo',
@@ -11570,7 +11723,10 @@ const countries = [
             root: '+4',
             suffixes: ['23'],
         },
-        capital: ['Vaduz'],
+        capital: {
+            eng: 'Vaduz',
+            spa: 'Vaduz',
+        },
         altSpellings: [
             'LI',
             'Principality of Liechtenstein',
@@ -11765,7 +11921,10 @@ const countries = [
             root: '+2',
             suffixes: ['68'],
         },
-        capital: ['Mbabane'],
+        capital: {
+            eng: 'Mbabane',
+            spa: 'Babane',
+        },
         altSpellings: [
             'SZ',
             'Swaziland',
@@ -12146,7 +12305,10 @@ const countries = [
             root: '+2',
             suffixes: ['34'],
         },
-        capital: ['Abuja'],
+        capital: {
+            eng: 'Abuya',
+            spa: 'Abuya',
+        },
         altSpellings: [
             'NG',
             'Nijeriya',
@@ -12709,7 +12871,10 @@ const countries = [
             root: '+2',
             suffixes: ['65'],
         },
-        capital: ['Lilongwe'],
+        capital: {
+            eng: 'Lilongwe',
+            spa: 'Lilongüe',
+        },
         altSpellings: ['MW', 'Republic of Malawi'],
         region: 'Africa',
         subregion: 'Eastern Africa',
@@ -12892,7 +13057,10 @@ const countries = [
             root: '+2',
             suffixes: ['39'],
         },
-        capital: ['São Tomé'],
+        capital: {
+            eng: 'São Tomé',
+            spa: 'Santo Tomé',
+        },
         altSpellings: [
             'ST',
             'Democratic Republic of São Tomé and Príncipe',
@@ -13255,7 +13423,10 @@ const countries = [
             root: '+5',
             suffixes: ['02'],
         },
-        capital: ['Guatemala City'],
+        capital: {
+            eng: 'Guatemala City',
+            spa: 'Ciudad de Guatemala',
+        },
         altSpellings: ['GT'],
         region: 'Americas',
         subregion: 'Central America',
@@ -13441,7 +13612,10 @@ const countries = [
             root: '+1',
             suffixes: ['246'],
         },
-        capital: ['Bridgetown'],
+        capital: {
+            eng: 'Bridgetown',
+            spa: 'Bridgetown',
+        },
         altSpellings: ['BB'],
         region: 'Americas',
         subregion: 'Caribbean',
@@ -13623,7 +13797,10 @@ const countries = [
             root: '+2',
             suffixes: ['33'],
         },
-        capital: ['Accra'],
+        capital: {
+            eng: 'Accra',
+            spa: 'Acra',
+        },
         altSpellings: ['GH'],
         region: 'Africa',
         subregion: 'Western Africa',
@@ -13805,7 +13982,10 @@ const countries = [
             root: '+5',
             suffixes: ['05'],
         },
-        capital: ['Managua'],
+        capital: {
+            eng: 'Managua',
+            spa: 'Managua',
+        },
         altSpellings: ['NI', 'Republic of Nicaragua', 'República de Nicaragua'],
         region: 'Americas',
         subregion: 'Central America',
@@ -14175,7 +14355,10 @@ const countries = [
             root: '+3',
             suffixes: ['51'],
         },
-        capital: ['Lisbon'],
+        capital: {
+            eng: 'Lisbon',
+            spa: 'Lisboa',
+        },
         altSpellings: [
             'PT',
             'Portuguesa',
@@ -14366,7 +14549,10 @@ const countries = [
             root: '+2',
             suffixes: ['44'],
         },
-        capital: ['Luanda'],
+        capital: {
+            eng: 'Luanda',
+            spa: 'Luanda',
+        },
         altSpellings: ['AO', 'República de Angola', "ʁɛpublika de an'ɡɔla"],
         region: 'Africa',
         subregion: 'Middle Africa',
@@ -14548,7 +14734,10 @@ const countries = [
             root: '+1',
             suffixes: ['809', '829', '849'],
         },
-        capital: ['Santo Domingo'],
+        capital: {
+            eng: 'Santo Domingo',
+            spa: 'Santo Domingo',
+        },
         altSpellings: ['DO'],
         region: 'Americas',
         subregion: 'Caribbean',
@@ -14734,7 +14923,10 @@ const countries = [
             root: '+3',
             suffixes: ['55'],
         },
-        capital: ['Tirana'],
+        capital: {
+            eng: 'Tirana',
+            spa: 'Tirana',
+        },
         altSpellings: ['AL', 'Shqipëri', 'Shqipëria', 'Shqipnia'],
         region: 'Europe',
         subregion: 'Southeast Europe',
@@ -14920,7 +15112,10 @@ const countries = [
             root: '+2',
             suffixes: ['45'],
         },
-        capital: ['Bissau'],
+        capital: {
+            eng: 'Bissau',
+            spa: 'Bisáu',
+        },
         altSpellings: [
             'GW',
             'Republic of Guinea-Bissau',
@@ -15111,7 +15306,10 @@ const countries = [
             root: '+2',
             suffixes: ['18'],
         },
-        capital: ['Tripoli'],
+        capital: {
+            eng: 'Tripoli',
+            spa: 'Trípoli',
+        },
         altSpellings: ['LY', 'State of Libya', 'Dawlat Libya'],
         region: 'Africa',
         subregion: 'Northern Africa',
@@ -15291,7 +15489,10 @@ const countries = [
             root: '+9',
             suffixes: ['65'],
         },
-        capital: ['Kuwait City'],
+        capital: {
+            eng: 'Kuwait City',
+            spa: 'Kuwait',
+        },
         altSpellings: ['KW', 'State of Kuwait', 'Dawlat al-Kuwait'],
         region: 'Asia',
         subregion: 'Western Asia',
@@ -15474,7 +15675,10 @@ const countries = [
             root: '+9',
             suffixes: ['73'],
         },
-        capital: ['Manama'],
+        capital: {
+            eng: 'Manama',
+            spa: 'Manama',
+        },
         altSpellings: ['BH', 'Kingdom of Bahrain', 'Mamlakat al-Baḥrayn'],
         region: 'Asia',
         subregion: 'Western Asia',
@@ -15660,7 +15864,10 @@ const countries = [
             root: '+9',
             suffixes: ['93'],
         },
-        capital: ['Ashgabat'],
+        capital: {
+            eng: 'Ashgabat',
+            spa: 'Asjabad',
+        },
         altSpellings: ['TM'],
         region: 'Asia',
         subregion: 'Central Asia',
@@ -15847,7 +16054,10 @@ const countries = [
             root: '+2',
             suffixes: ['31'],
         },
-        capital: ['Monrovia'],
+        capital: {
+            eng: 'Monrovia',
+            spa: 'Monrovia',
+        },
         altSpellings: ['LR', 'Republic of Liberia'],
         region: 'Africa',
         subregion: 'Western Africa',
@@ -16033,7 +16243,10 @@ const countries = [
             root: '+2',
             suffixes: ['26'],
         },
-        capital: ['Ouagadougou'],
+        capital: {
+            eng: 'Ouagadougou',
+            spa: 'Uagadugú',
+        },
         altSpellings: ['BF'],
         region: 'Africa',
         subregion: 'Western Africa',
@@ -16215,7 +16428,10 @@ const countries = [
             root: '+3',
             suffixes: ['71'],
         },
-        capital: ['Riga'],
+        capital: {
+            eng: 'Riga',
+            spa: 'Riga',
+        },
         altSpellings: ['LV', 'Republic of Latvia', 'Latvijas Republika'],
         region: 'Europe',
         subregion: 'Northern Europe',
@@ -16401,7 +16617,10 @@ const countries = [
             root: '+7',
             suffixes: ['3', '4', '5', '8', '9'],
         },
-        capital: ['Moscow'],
+        capital: {
+            eng: 'Moscow',
+            spa: 'Moscú',
+        },
         altSpellings: ['RU', 'Russian Federation', 'Российская Федерация'],
         region: 'Europe',
         subregion: 'Eastern Europe',
@@ -16617,7 +16836,10 @@ const countries = [
             root: '+6',
             suffixes: ['3'],
         },
-        capital: ['Manila'],
+        capital: {
+            eng: 'Manila',
+            spa: 'Manila',
+        },
         altSpellings: [
             'PH',
             'Republic of the Philippines',
@@ -16815,7 +17037,10 @@ const countries = [
             root: '+6',
             suffixes: ['4'],
         },
-        capital: ['Wellington'],
+        capital: {
+            eng: 'Wellington',
+            spa: 'Wellington',
+        },
         altSpellings: ['NZ', 'Aotearoa'],
         region: 'Oceania',
         subregion: 'Australia and New Zealand',
@@ -17010,7 +17235,10 @@ const countries = [
             root: '+2',
             suffixes: ['37'],
         },
-        capital: ['Yaoundé'],
+        capital: {
+            eng: 'Yaoundé',
+            spa: 'Yaundé',
+        },
         altSpellings: ['CM', 'Republic of Cameroon', 'République du Cameroun'],
         region: 'Africa',
         subregion: 'Middle Africa',
@@ -17193,7 +17421,10 @@ const countries = [
             root: '+5',
             suffixes: ['93'],
         },
-        capital: ['Quito'],
+        capital: {
+            eng: 'Quito',
+            spa: 'Quito',
+        },
         altSpellings: ['EC', 'Republic of Ecuador', 'República del Ecuador'],
         region: 'Americas',
         subregion: 'South America',
@@ -17555,7 +17786,10 @@ const countries = [
             root: '+4',
             suffixes: ['0'],
         },
-        capital: ['Bucharest'],
+        capital: {
+            eng: 'Bucharest',
+            spa: 'Bucarest',
+        },
         altSpellings: ['RO', 'Rumania', 'Roumania', 'România'],
         region: 'Europe',
         subregion: 'Southeast Europe',
@@ -17749,7 +17983,10 @@ const countries = [
             root: '+9',
             suffixes: ['1'],
         },
-        capital: ['New Delhi'],
+        capital: {
+            eng: 'New Delhi',
+            spa: 'Nueva Delhi',
+        },
         altSpellings: [
             'IN',
             'Bhārat',
@@ -17943,7 +18180,10 @@ const countries = [
             root: '+2',
             suffixes: ['41'],
         },
-        capital: ['Libreville'],
+        capital: {
+            eng: 'Libreville',
+            spa: 'Libreville',
+        },
         altSpellings: ['GA', 'Gabonese Republic', 'République Gabonaise'],
         region: 'Africa',
         subregion: 'Middle Africa',
@@ -18125,7 +18365,10 @@ const countries = [
             root: '+9',
             suffixes: ['5'],
         },
-        capital: ['Naypyidaw'],
+        capital: {
+            eng: 'Naypyidaw',
+            spa: 'Naipyidó',
+        },
         altSpellings: [
             'MM',
             'Burma',
@@ -18216,7 +18459,7 @@ const countries = [
             },
             spa: {
                 official: 'República de la Unión de Myanmar',
-                common: 'Myanmar',
+                common: 'Birmania',
             },
             srp: {
                 official: 'Република Савез Мјанмара',
@@ -18671,7 +18914,10 @@ const countries = [
             root: '+3',
             suffixes: ['82'],
         },
-        capital: ['Podgorica'],
+        capital: {
+            eng: 'Podgorica',
+            spa: 'Podgorica',
+        },
         altSpellings: ['ME', 'Crna Gora'],
         region: 'Europe',
         subregion: 'Southeast Europe',
@@ -18865,7 +19111,10 @@ const countries = [
             root: '+5',
             suffixes: ['01'],
         },
-        capital: ['Belmopan'],
+        capital: {
+            eng: 'Belmopan',
+            spa: 'Belmopán',
+        },
         altSpellings: ['BZ'],
         region: 'Americas',
         subregion: 'Central America',
@@ -19049,7 +19298,10 @@ const countries = [
             root: '+9',
             suffixes: ['76'],
         },
-        capital: ['Ulan Bator'],
+        capital: {
+            eng: 'Ulan Bator',
+            spa: 'Ulán Bator',
+        },
         altSpellings: ['MN'],
         region: 'Asia',
         subregion: 'Eastern Asia',
@@ -19235,7 +19487,10 @@ const countries = [
             root: '+4',
             suffixes: ['3'],
         },
-        capital: ['Vienna'],
+        capital: {
+            eng: 'Vienna',
+            spa: 'Viena',
+        },
         altSpellings: ['AT', 'Osterreich', 'Oesterreich'],
         region: 'Europe',
         subregion: 'Central Europe',
@@ -19597,7 +19852,10 @@ const countries = [
             root: '+9',
             suffixes: ['66'],
         },
-        capital: ['Riyadh'],
+        capital: {
+            eng: 'Riyadh',
+            spa: 'Riad',
+        },
         altSpellings: [
             'Saudi',
             'SA',
@@ -19785,7 +20043,10 @@ const countries = [
             root: '+3',
             suffixes: ['6'],
         },
-        capital: ['Budapest'],
+        capital: {
+            eng: 'Budapest',
+            spa: 'Budapest',
+        },
         altSpellings: ['HU'],
         region: 'Europe',
         subregion: 'Central Europe',
@@ -19975,7 +20236,10 @@ const countries = [
             root: '+6',
             suffixes: ['74'],
         },
-        capital: ['Yaren'],
+        capital: {
+            eng: 'Yaren',
+            spa: 'Yaren',
+        },
         altSpellings: [
             'NR',
             'Naoero',
@@ -20166,7 +20430,10 @@ const countries = [
             root: '+5',
             suffixes: ['4'],
         },
-        capital: ['Buenos Aires'],
+        capital: {
+            eng: 'Buenos Aires',
+            spa: 'Buenos Aires',
+        },
         altSpellings: ['AR', 'Argentine Republic', 'República Argentina'],
         region: 'Americas',
         subregion: 'South America',
@@ -20705,7 +20972,10 @@ const countries = [
             root: '+9',
             suffixes: ['67'],
         },
-        capital: ["Sana'a"],
+        capital: {
+            eng: "Sana'a",
+            spa: 'Saná',
+        },
         altSpellings: ['YE', 'Yemeni Republic', 'al-Jumhūriyyah al-Yamaniyyah'],
         region: 'Asia',
         subregion: 'Western Asia',
@@ -20887,7 +21157,10 @@ const countries = [
             root: '+4',
             suffixes: ['21'],
         },
-        capital: ['Bratislava'],
+        capital: {
+            eng: 'Bratislava',
+            spa: 'Bratislava',
+        },
         altSpellings: ['SK', 'Slovak Republic', 'Slovenská republika'],
         region: 'Europe',
         subregion: 'Central Europe',
@@ -21246,7 +21519,10 @@ const countries = [
             root: '+4',
             suffixes: ['6'],
         },
-        capital: ['Stockholm'],
+        capital: {
+            eng: 'Stockholm',
+            spa: 'Estocolmo',
+        },
         altSpellings: ['SE', 'Kingdom of Sweden', 'Konungariket Sverige'],
         region: 'Europe',
         subregion: 'Northern Europe',
@@ -21618,7 +21894,10 @@ const countries = [
             root: '+3',
             suffixes: ['9'],
         },
-        capital: ['Rome'],
+        capital: {
+            eng: 'Rome',
+            spa: 'Roma',
+        },
         altSpellings: ['IT', 'Italian Republic', 'Repubblica italiana'],
         region: 'Europe',
         subregion: 'Southern Europe',
@@ -21804,7 +22083,10 @@ const countries = [
             root: '+5',
             suffixes: ['5'],
         },
-        capital: ['Brasília'],
+        capital: {
+            eng: 'Brasília',
+            spa: 'Brasília',
+        },
         altSpellings: [
             'BR',
             'Brasil',
@@ -22006,7 +22288,10 @@ const countries = [
             root: '+2',
             suffixes: ['11'],
         },
-        capital: ['Juba'],
+        capital: {
+            eng: 'Juba',
+            spa: 'Yuba',
+        },
         altSpellings: ['SS'],
         region: 'Africa',
         subregion: 'Middle Africa',
@@ -22192,7 +22477,10 @@ const countries = [
             root: '+3',
             suffixes: ['57'],
         },
-        capital: ['Nicosia'],
+        capital: {
+            eng: 'Nicosia',
+            spa: 'Nicosia',
+        },
         altSpellings: [
             'CY',
             'Kýpros',
@@ -22385,7 +22673,10 @@ const countries = [
             root: '+6',
             suffixes: ['6'],
         },
-        capital: ['Bangkok'],
+        capital: {
+            eng: 'Bangkok',
+            spa: 'Bangkok',
+        },
         altSpellings: [
             'TH',
             'Prathet',
@@ -22578,7 +22869,10 @@ const countries = [
             root: '+9',
             suffixes: ['0'],
         },
-        capital: ['Ankara'],
+        capital: {
+            eng: 'Ankara',
+            spa: 'Ankara',
+        },
         altSpellings: [
             'TR',
             'Turkiye',
@@ -22955,7 +23249,10 @@ const countries = [
             root: '+6',
             suffixes: ['1'],
         },
-        capital: ['Canberra'],
+        capital: {
+            eng: 'Canberra',
+            spa: 'Camberra',
+        },
         altSpellings: ['AU'],
         region: 'Oceania',
         subregion: 'Australia and New Zealand',
@@ -23149,7 +23446,10 @@ const countries = [
             root: '+8',
             suffixes: ['80'],
         },
-        capital: ['Dhaka'],
+        capital: {
+            eng: 'Dhaka',
+            spa: 'Daca',
+        },
         altSpellings: [
             'BD',
             "People's Republic of Bangladesh",
@@ -23339,7 +23639,10 @@ const countries = [
             root: '+1',
             suffixes: ['473'],
         },
-        capital: ["St. George's"],
+        capital: {
+            eng: "St. George's",
+            spa: 'Saint George',
+        },
         altSpellings: ['GD'],
         region: 'Americas',
         subregion: 'Caribbean',
@@ -23529,7 +23832,10 @@ const countries = [
             root: '+6',
             suffixes: ['5'],
         },
-        capital: ['Singapore'],
+        capital: {
+            eng: 'Singapore',
+            spa: 'Singapur',
+        },
         altSpellings: ['SG', 'Singapura', 'Republik Singapura', '新加坡共和国'],
         region: 'Asia',
         subregion: 'South-Eastern Asia',
@@ -23710,7 +24016,10 @@ const countries = [
             root: '+3',
             suffixes: ['73'],
         },
-        capital: ['Chișinău'],
+        capital: {
+            eng: 'Chișinău',
+            spa: 'Chisináu',
+        },
         altSpellings: [
             'MD',
             'Moldova, Republic of',
@@ -23901,7 +24210,10 @@ const countries = [
             root: '+2',
             suffixes: ['23'],
         },
-        capital: ['Bamako'],
+        capital: {
+            eng: 'Bamako',
+            spa: 'Bamako',
+        },
         altSpellings: ['ML', 'Republic of Mali', 'République du Mali'],
         region: 'Africa',
         subregion: 'Western Africa',
@@ -24087,7 +24399,10 @@ const countries = [
             root: '+2',
             suffixes: ['54'],
         },
-        capital: ['Nairobi'],
+        capital: {
+            eng: 'Nairobi',
+            spa: 'Nairobi',
+        },
         altSpellings: ['KE', 'Republic of Kenya', 'Jamhuri ya Kenya'],
         region: 'Africa',
         subregion: 'Eastern Africa',
@@ -24274,7 +24589,10 @@ const countries = [
             root: '+5',
             suffixes: ['98'],
         },
-        capital: ['Montevideo'],
+        capital: {
+            eng: 'Montevideo',
+            spa: 'Montevideo',
+        },
         altSpellings: [
             'UY',
             'Oriental Republic of Uruguay',
@@ -24476,7 +24794,10 @@ const countries = [
             root: '+4',
             suffixes: ['1'],
         },
-        capital: ['Bern'],
+        capital: {
+            eng: 'Bern',
+            spa: 'Berna',
+        },
         altSpellings: [
             'CH',
             'Swiss Confederation',
@@ -24672,7 +24993,10 @@ const countries = [
             root: '+5',
             suffixes: ['03'],
         },
-        capital: ['San Salvador'],
+        capital: {
+            eng: 'San Salvador',
+            spa: 'San Salvador',
+        },
         altSpellings: [
             'SV',
             'Republic of El Salvador',
@@ -24866,7 +25190,10 @@ const countries = [
             root: '+2',
             suffixes: ['35'],
         },
-        capital: ["N'Djamena"],
+        capital: {
+            eng: "N'Djamena",
+            spa: 'Yamena',
+        },
         altSpellings: [
             'TD',
             'Tchad',
@@ -25237,7 +25564,10 @@ const countries = [
             root: '+3',
             suffixes: ['75'],
         },
-        capital: ['Minsk'],
+        capital: {
+            eng: 'Minsk',
+            spa: 'Minsk',
+        },
         altSpellings: [
             'BY',
             'Bielaruś',
@@ -25430,7 +25760,10 @@ const countries = [
             root: '+2',
             suffixes: ['25'],
         },
-        capital: ['Yamoussoukro'],
+        capital: {
+            eng: 'Yamoussoukro',
+            spa: 'Yamusukro',
+        },
         altSpellings: [
             'CI',
             "Côte d'Ivoire",
@@ -25622,7 +25955,10 @@ const countries = [
             root: '+9',
             suffixes: ['61'],
         },
-        capital: ['Beirut'],
+        capital: {
+            eng: 'Beirut',
+            spa: 'Beirut',
+        },
         altSpellings: [
             'LB',
             'Lebanese Republic',
@@ -25813,7 +26149,10 @@ const countries = [
             root: '+3',
             suffixes: ['1'],
         },
-        capital: ['Amsterdam'],
+        capital: {
+            eng: 'Amsterdam',
+            spa: 'Ámsterdam',
+        },
         altSpellings: ['NL', 'Holland', 'Nederland', 'The Netherlands'],
         region: 'Europe',
         subregion: 'Western Europe',
@@ -25999,7 +26338,10 @@ const countries = [
             root: '+3',
             suffixes: ['78'],
         },
-        capital: ['City of San Marino'],
+        capital: {
+            eng: 'City of San Marino',
+            spa: 'San Marino',
+        },
         altSpellings: [
             'SM',
             'Republic of San Marino',
@@ -26190,7 +26532,10 @@ const countries = [
             root: '+9',
             suffixes: ['75'],
         },
-        capital: ['Thimphu'],
+        capital: {
+            eng: 'Thimphu',
+            spa: 'Timbu',
+        },
         altSpellings: ['BT', 'Kingdom of Bhutan'],
         region: 'Asia',
         subregion: 'Southern Asia',
@@ -26376,7 +26721,10 @@ const countries = [
             root: '+6',
             suffixes: ['0'],
         },
-        capital: ['Kuala Lumpur'],
+        capital: {
+            eng: 'Kuala Lumpur',
+            spa: 'Kuala Lumpur',
+        },
         altSpellings: ['MY'],
         region: 'Asia',
         subregion: 'South-Eastern Asia',
@@ -26567,7 +26915,10 @@ const countries = [
             root: '+7',
             suffixes: ['6', '7'],
         },
-        capital: ['Nur-Sultan'],
+        capital: {
+            eng: 'Astana',
+            spa: 'Astaná',
+        },
         altSpellings: [
             'KZ',
             'Qazaqstan',
@@ -26767,7 +27118,10 @@ const countries = [
             root: '+3',
             suffixes: ['58'],
         },
-        capital: ['Helsinki'],
+        capital: {
+            eng: 'Helsinki',
+            spa: 'Helsinki',
+        },
         altSpellings: [
             'FI',
             'Suomi',
@@ -26960,7 +27314,10 @@ const countries = [
             root: '+2',
             suffixes: ['16'],
         },
-        capital: ['Tunis'],
+        capital: {
+            eng: 'Tunis',
+            spa: 'Túnez',
+        },
         altSpellings: [
             'TN',
             'Republic of Tunisia',
@@ -27150,7 +27507,10 @@ const countries = [
             root: '+2',
             suffixes: ['20'],
         },
-        capital: ['Banjul'],
+        capital: {
+            eng: 'Banjul',
+            spa: 'Banjul',
+        },
         altSpellings: ['GM', 'Republic of the Gambia'],
         region: 'Africa',
         subregion: 'Western Africa',
@@ -27332,7 +27692,10 @@ const countries = [
             root: '+9',
             suffixes: ['63'],
         },
-        capital: ['Damascus'],
+        capital: {
+            eng: 'Damascus',
+            spa: 'Damasco',
+        },
         altSpellings: [
             'SY',
             'Syrian Arab Republic',
@@ -27879,7 +28242,10 @@ const countries = [
             root: '+2',
             suffixes: ['24'],
         },
-        capital: ['Conakry'],
+        capital: {
+            eng: 'Conakry',
+            spa: 'Conakri',
+        },
         altSpellings: ['GN', 'Republic of Guinea', 'République de Guinée'],
         region: 'Africa',
         subregion: 'Western Africa',
@@ -28242,7 +28608,10 @@ const countries = [
             root: '+2',
             suffixes: ['58'],
         },
-        capital: ['Maputo'],
+        capital: {
+            eng: 'Maputo',
+            spa: 'Maputo',
+        },
         altSpellings: [
             'MZ',
             'Republic of Mozambique',
@@ -28436,7 +28805,10 @@ const countries = [
             root: '+6',
             suffixes: ['85'],
         },
-        capital: ['Apia'],
+        capital: {
+            eng: 'Apia',
+            spa: 'Apia',
+        },
         altSpellings: [
             'WS',
             'Independent State of Samoa',
@@ -28973,7 +29345,10 @@ const countries = [
             root: '+8',
             suffixes: ['50'],
         },
-        capital: ['Pyongyang'],
+        capital: {
+            eng: 'Pyongyang',
+            spa: 'Pionyang',
+        },
         altSpellings: [
             'KP',
             "Democratic People's Republic of Korea",
@@ -29169,7 +29544,10 @@ const countries = [
             root: '+2',
             suffixes: ['53'],
         },
-        capital: ['Djibouti'],
+        capital: {
+            eng: 'Djibouti',
+            spa: 'Yibuti',
+        },
         altSpellings: [
             'DJ',
             'Jabuuti',
@@ -29360,7 +29738,10 @@ const countries = [
             root: '+5',
             suffixes: ['97'],
         },
-        capital: ['Paramaribo'],
+        capital: {
+            eng: 'Paramaribo',
+            spa: 'Paramaribo',
+        },
         altSpellings: [
             'SR',
             'Sarnam',
@@ -29548,7 +29929,10 @@ const countries = [
             root: '+3',
             suffixes: ['3'],
         },
-        capital: ['Paris'],
+        capital: {
+            eng: 'Paris',
+            spa: 'París',
+        },
         altSpellings: ['FR', 'French Republic', 'République française'],
         region: 'Europe',
         subregion: 'Western Europe',
@@ -29757,7 +30141,10 @@ const countries = [
             root: '+2',
             suffixes: ['50'],
         },
-        capital: ['Kigali'],
+        capital: {
+            eng: 'Kigali',
+            spa: 'Kigali',
+        },
         altSpellings: [
             'RW',
             'Republic of Rwanda',
@@ -29946,7 +30333,10 @@ const countries = [
             root: '+8',
             suffixes: ['2'],
         },
-        capital: ['Seoul'],
+        capital: {
+            eng: 'Seoul',
+            spa: 'Seúl',
+        },
         altSpellings: [
             'KR',
             'Korea, Republic of',
@@ -30489,7 +30879,10 @@ const countries = [
             root: '+1',
             suffixes: ['876'],
         },
-        capital: ['Kingston'],
+        capital: {
+            eng: 'Kingston',
+            spa: 'Kingston',
+        },
         altSpellings: ['JM'],
         region: 'Americas',
         subregion: 'Caribbean',
@@ -30671,7 +31064,10 @@ const countries = [
             root: '+9',
             suffixes: ['60'],
         },
-        capital: ['Malé'],
+        capital: {
+            eng: 'Malé',
+            spa: 'Malé',
+        },
         altSpellings: [
             'MV',
             'Maldive Islands',
@@ -30861,7 +31257,10 @@ const countries = [
             root: '+3',
             suffixes: ['86'],
         },
-        capital: ['Ljubljana'],
+        capital: {
+            eng: 'Ljubljana',
+            spa: 'Liubliana',
+        },
         altSpellings: ['SI', 'Republic of Slovenia', 'Republika Slovenija'],
         region: 'Europe',
         subregion: 'Central Europe',
@@ -31396,7 +31795,10 @@ const countries = [
             root: '+5',
             suffixes: ['95'],
         },
-        capital: ['Asunción'],
+        capital: {
+            eng: 'Asunción',
+            spa: 'Asunción',
+        },
         altSpellings: [
             'PY',
             'Republic of Paraguay',
@@ -31588,7 +31990,10 @@ const countries = [
             root: '+6',
             suffixes: ['2'],
         },
-        capital: ['Jakarta'],
+        capital: {
+            eng: 'Jakarta',
+            spa: 'Yakarta',
+        },
         altSpellings: ['ID', 'Republic of Indonesia', 'Republik Indonesia'],
         region: 'Asia',
         subregion: 'South-Eastern Asia',
@@ -31778,7 +32183,10 @@ const countries = [
             root: '+2',
             suffixes: ['61'],
         },
-        capital: ['Antananarivo'],
+        capital: {
+            eng: 'Antananarivo',
+            spa: 'Antananarivo',
+        },
         altSpellings: [
             'MG',
             'Republic of Madagascar',
@@ -31977,7 +32385,10 @@ const countries = [
             root: '+9',
             suffixes: ['64'],
         },
-        capital: ['Baghdad'],
+        capital: {
+            eng: 'Baghdad',
+            spa: 'Bagdad',
+        },
         altSpellings: ['IQ', 'Republic of Iraq', 'Jumhūriyyat al-‘Irāq'],
         region: 'Asia',
         subregion: 'Western Asia',
@@ -32165,7 +32576,10 @@ const countries = [
             root: '+5',
             suffixes: ['04'],
         },
-        capital: ['Tegucigalpa'],
+        capital: {
+            eng: 'Tegucigalpa',
+            spa: 'Tegucigalpa',
+        },
         altSpellings: ['HN', 'Republic of Honduras', 'República de Honduras'],
         region: 'Americas',
         subregion: 'Central America',
@@ -32355,7 +32769,10 @@ const countries = [
             root: '+2',
             suffixes: ['12'],
         },
-        capital: ['Rabat'],
+        capital: {
+            eng: 'Rabat',
+            spa: 'Rabat',
+        },
         altSpellings: ['MA', 'Kingdom of Morocco', 'Al-Mamlakah al-Maġribiyah'],
         region: 'Africa',
         subregion: 'Northern Africa',
@@ -32738,7 +33155,10 @@ const countries = [
             root: '+1',
             suffixes: ['268'],
         },
-        capital: ["Saint John's"],
+        capital: {
+            eng: "Saint John's",
+            spa: "Saint John's",
+        },
         altSpellings: ['AG'],
         region: 'Americas',
         subregion: 'Caribbean',
@@ -32920,7 +33340,10 @@ const countries = [
             root: '+9',
             suffixes: ['4'],
         },
-        capital: ['Sri Jayawardenepura Kotte'],
+        capital: {
+            eng: 'Sri Jayawardenepura Kotte',
+            spa: 'Sri Jayewardenepura',
+        },
         altSpellings: [
             'LK',
             'ilaṅkai',
@@ -33116,7 +33539,10 @@ const countries = [
             root: '+5',
             suffixes: ['09'],
         },
-        capital: ['Port-au-Prince'],
+        capital: {
+            eng: 'Port-au-Prince',
+            spa: 'Puerto Príncipe',
+        },
         altSpellings: [
             'HT',
             'Republic of Haiti',
@@ -33312,7 +33738,10 @@ const countries = [
             root: '+5',
             suffixes: ['3'],
         },
-        capital: ['Havana'],
+        capital: {
+            eng: 'Havana',
+            spa: 'La Habana',
+        },
         altSpellings: ['CU', 'Republic of Cuba', 'República de Cuba'],
         region: 'Americas',
         subregion: 'Caribbean',
@@ -33498,7 +33927,10 @@ const countries = [
             root: '+9',
             suffixes: ['92'],
         },
-        capital: ['Dushanbe'],
+        capital: {
+            eng: 'Dushanbe',
+            spa: 'Dusambé',
+        },
         altSpellings: [
             'TJ',
             'Toçikiston',
@@ -33877,7 +34309,10 @@ const countries = [
             root: '+5',
             suffixes: ['7'],
         },
-        capital: ['Bogotá'],
+        capital: {
+            eng: 'Bogotá',
+            spa: 'Bogotá',
+        },
         altSpellings: ['CO', 'Republic of Colombia', 'República de Colombia'],
         region: 'Americas',
         subregion: 'South America',
@@ -34059,7 +34494,10 @@ const countries = [
             root: '+6',
             suffixes: ['91'],
         },
-        capital: ['Palikir'],
+        capital: {
+            eng: 'Palikir',
+            spa: 'Palikir',
+        },
         altSpellings: [
             'FM',
             'Federated States of Micronesia',
@@ -34433,7 +34871,10 @@ const countries = [
             root: '+1',
             suffixes: ['869'],
         },
-        capital: ['Basseterre'],
+        capital: {
+            eng: 'Basseterre',
+            spa: 'Basseterre',
+        },
         altSpellings: ['KN', 'Federation of Saint Christopher and Nevis'],
         region: 'Americas',
         subregion: 'Caribbean',
@@ -34615,7 +35056,10 @@ const countries = [
             root: '+9',
             suffixes: ['98'],
         },
-        capital: ['Tashkent'],
+        capital: {
+            eng: 'Tashkent',
+            spa: 'Taskent',
+        },
         altSpellings: [
             'UZ',
             'Republic of Uzbekistan',
@@ -34988,7 +35432,10 @@ const countries = [
             root: '+3',
             suffixes: ['53'],
         },
-        capital: ['Dublin'],
+        capital: {
+            eng: 'Dublin',
+            spa: 'Dublín',
+        },
         altSpellings: [
             'IE',
             'Éire',
@@ -35184,7 +35631,10 @@ const countries = [
             root: '+5',
             suffixes: ['1'],
         },
-        capital: ['Lima'],
+        capital: {
+            eng: 'Lima',
+            spa: 'Lima',
+        },
         altSpellings: ['PE', 'Republic of Peru', 'República del Perú'],
         region: 'Americas',
         subregion: 'South America',
@@ -35376,7 +35826,10 @@ const countries = [
             root: '+9',
             suffixes: ['2'],
         },
-        capital: ['Islamabad'],
+        capital: {
+            eng: 'Islamabad',
+            spa: 'Islamabad',
+        },
         altSpellings: [
             'PK',
             'Pākistān',
@@ -35568,7 +36021,10 @@ const countries = [
             root: '+5',
             suffixes: ['6'],
         },
-        capital: ['Santiago'],
+        capital: {
+            eng: 'Santiago',
+            spa: 'Santiago de Chile',
+        },
         altSpellings: ['CL', 'Republic of Chile', 'República de Chile'],
         region: 'Americas',
         subregion: 'South America',
@@ -35754,7 +36210,10 @@ const countries = [
             root: '+2',
             suffixes: ['60'],
         },
-        capital: ['Lusaka'],
+        capital: {
+            eng: 'Lusaka',
+            spa: 'Lusaka',
+        },
         altSpellings: ['ZM', 'Republic of Zambia'],
         region: 'Africa',
         subregion: 'Eastern Africa',
@@ -35940,7 +36399,10 @@ const countries = [
             root: '+1',
             suffixes: ['758'],
         },
-        capital: ['Castries'],
+        capital: {
+            eng: 'Castries',
+            spa: 'Castries',
+        },
         altSpellings: ['LC'],
         region: 'Americas',
         subregion: 'Caribbean',
@@ -36129,7 +36591,10 @@ const countries = [
             root: '+2',
             suffixes: ['48'],
         },
-        capital: ['Victoria'],
+        capital: {
+            eng: 'Victoria',
+            spa: 'Victoria',
+        },
         altSpellings: [
             'SC',
             'Republic of Seychelles',
@@ -36317,7 +36782,10 @@ const countries = [
             root: '+2',
             suffixes: ['29'],
         },
-        capital: ['Porto-Novo'],
+        capital: {
+            eng: 'Porto-Novo',
+            spa: 'Porto Novo',
+        },
         altSpellings: ['BJ', 'Republic of Benin', 'République du Bénin'],
         region: 'Africa',
         subregion: 'Western Africa',
@@ -36500,7 +36968,10 @@ const countries = [
             root: '+4',
             suffixes: ['4'],
         },
-        capital: ['London'],
+        capital: {
+            eng: 'London',
+            spa: 'Londres',
+        },
         altSpellings: ['GB', 'UK', 'Great Britain'],
         region: 'Europe',
         subregion: 'Northern Europe',
@@ -36856,7 +37327,10 @@ const countries = [
             root: '+5',
             suffixes: ['06'],
         },
-        capital: ['San José'],
+        capital: {
+            eng: 'San José',
+            spa: 'San José',
+        },
         altSpellings: [
             'CR',
             'Republic of Costa Rica',
@@ -37054,7 +37528,10 @@ const countries = [
             root: '+2',
             suffixes: ['69'],
         },
-        capital: ['Moroni'],
+        capital: {
+            eng: 'Moroni',
+            spa: 'Moroni',
+        },
         altSpellings: [
             'KM',
             'Union of the Comoros',
@@ -37243,7 +37720,10 @@ const countries = [
             root: '+3',
             suffixes: ['54'],
         },
-        capital: ['Reykjavik'],
+        capital: {
+            eng: 'Reykjavik',
+            spa: 'Reikiavik',
+        },
         altSpellings: [
             'IS',
             'Island',
@@ -37433,7 +37913,10 @@ const countries = [
             root: '+8',
             suffixes: ['1'],
         },
-        capital: ['Tokyo'],
+        capital: {
+            eng: 'Tokyo',
+            spa: 'Tokio',
+        },
         altSpellings: ['JP', 'Nippon', 'Nihon'],
         region: 'Asia',
         subregion: 'Eastern Asia',
@@ -37621,7 +38104,10 @@ const countries = [
             root: '+3',
             suffixes: ['906698', '79'],
         },
-        capital: ['Vatican City'],
+        capital: {
+            eng: 'Vatican City',
+            spa: 'Ciudad del Vaticano',
+        },
         altSpellings: [
             'VA',
             'Holy See (Vatican City State)',
@@ -38166,7 +38652,10 @@ const countries = [
             root: '+6',
             suffixes: ['79'],
         },
-        capital: ['Suva'],
+        capital: {
+            eng: 'Suva',
+            spa: 'Suva',
+        },
         altSpellings: [
             'FJ',
             'Viti',
@@ -38362,7 +38851,10 @@ const countries = [
             root: '+3',
             suffixes: ['87'],
         },
-        capital: ['Sarajevo'],
+        capital: {
+            eng: 'Sarajevo',
+            spa: 'Sarajevo',
+        },
         altSpellings: ['BA', 'Bosnia-Herzegovina', 'Босна и Херцеговина'],
         region: 'Europe',
         subregion: 'Southeast Europe',
@@ -38906,7 +39398,10 @@ const countries = [
             root: '+5',
             suffixes: ['2'],
         },
-        capital: ['Mexico City'],
+        capital: {
+            eng: 'Mexico City',
+            spa: 'Ciudad de México',
+        },
         altSpellings: [
             'MX',
             'Mexicanos',
@@ -39101,7 +39596,10 @@ const countries = [
             root: '+8',
             suffixes: ['55'],
         },
-        capital: ['Phnom Penh'],
+        capital: {
+            eng: 'Phnom Penh',
+            spa: 'Nom Pen',
+        },
         altSpellings: ['KH', 'Kingdom of Cambodia'],
         region: 'Asia',
         subregion: 'South-Eastern Asia',
@@ -39284,7 +39782,10 @@ const countries = [
             root: '+1',
             suffixes: ['784'],
         },
-        capital: ['Kingstown'],
+        capital: {
+            eng: 'Kingstown',
+            spa: 'Kingstown',
+        },
         altSpellings: ['VC'],
         region: 'Americas',
         subregion: 'Caribbean',
@@ -39462,7 +39963,10 @@ const countries = [
             root: '+9',
             suffixes: ['8'],
         },
-        capital: ['Tehran'],
+        capital: {
+            eng: 'Tehran',
+            spa: 'Teherán',
+        },
         altSpellings: [
             'IR',
             'Islamic Republic of Iran',
@@ -39653,7 +40157,10 @@ const countries = [
             root: '+3',
             suffixes: ['56'],
         },
-        capital: ['Valletta'],
+        capital: {
+            eng: 'Valletta',
+            spa: 'La valeta',
+        },
         altSpellings: ['MT', 'Republic of Malta', "Repubblika ta' Malta"],
         region: 'Europe',
         subregion: 'Southern Europe',
@@ -39839,7 +40346,10 @@ const countries = [
             root: '+3',
             suffixes: ['81'],
         },
-        capital: ['Belgrade'],
+        capital: {
+            eng: 'Belgrade',
+            spa: 'Belgrado',
+        },
         altSpellings: [
             'RS',
             'Srbija',
@@ -40031,7 +40541,10 @@ const countries = [
             root: '+9',
             suffixes: ['71'],
         },
-        capital: ['Abu Dhabi'],
+        capital: {
+            eng: 'Abu Dhabi',
+            spa: 'Abu Dabi',
+        },
         altSpellings: ['AE', 'UAE', 'Emirates'],
         region: 'Asia',
         subregion: 'Western Asia',
@@ -40217,7 +40730,10 @@ const countries = [
             root: '+9',
             suffixes: ['94'],
         },
-        capital: ['Baku'],
+        capital: {
+            eng: 'Baku',
+            spa: 'Bakú',
+        },
         altSpellings: [
             'AZ',
             'Republic of Azerbaijan',
@@ -40756,7 +41272,10 @@ const countries = [
             root: '+6',
             suffixes: ['78'],
         },
-        capital: ['Port Vila'],
+        capital: {
+            eng: 'Port Vila',
+            spa: 'Port Vila',
+        },
         altSpellings: [
             'VU',
             'Republic of Vanuatu',
@@ -40944,7 +41463,10 @@ const countries = [
             root: '+2',
             suffixes: ['27'],
         },
-        capital: ['Niamey'],
+        capital: {
+            eng: 'Niamey',
+            spa: 'Niamey',
+        },
         altSpellings: ['NE', 'Nijar'],
         region: 'Africa',
         subregion: 'Western Africa',
@@ -41138,7 +41660,10 @@ const countries = [
             root: '+2',
             suffixes: ['91'],
         },
-        capital: ['Asmara'],
+        capital: {
+            eng: 'Asmara',
+            spa: 'Asmara',
+        },
         altSpellings: [
             'ER',
             'State of Eritrea',
@@ -41330,7 +41855,10 @@ const countries = [
             root: '+2',
             suffixes: ['36'],
         },
-        capital: ['Bangui'],
+        capital: {
+            eng: 'Bangui',
+            spa: 'Bangui',
+        },
         altSpellings: [
             'CF',
             'Central African Republic',
@@ -41521,7 +42049,10 @@ const countries = [
             root: '+9',
             suffixes: ['72'],
         },
-        capital: ['Jerusalem'],
+        capital: {
+            eng: 'Jerusalem',
+            spa: 'Jerusalén',
+        },
         altSpellings: ['IL', 'State of Israel', "Medīnat Yisrā'el"],
         region: 'Asia',
         subregion: 'Western Asia',
@@ -41708,7 +42239,10 @@ const countries = [
             root: '+9',
             suffixes: ['77'],
         },
-        capital: ['Kathmandu'],
+        capital: {
+            eng: 'Kathmandu',
+            spa: 'Katmandú',
+        },
         altSpellings: [
             'NP',
             'Federal Democratic Republic of Nepal',
@@ -41902,7 +42436,10 @@ const countries = [
             root: '+5',
             suffixes: ['07'],
         },
-        capital: ['Panama City'],
+        capital: {
+            eng: 'Panama City',
+            spa: 'Panamá',
+        },
         altSpellings: ['PA', 'Republic of Panama', 'República de Panamá'],
         region: 'Americas',
         subregion: 'Central America',
@@ -42277,7 +42814,10 @@ const countries = [
             root: '+6',
             suffixes: ['77'],
         },
-        capital: ['Honiara'],
+        capital: {
+            eng: 'Honiara',
+            spa: 'Honiara',
+        },
         altSpellings: ['SB'],
         region: 'Oceania',
         subregion: 'Melanesia',
@@ -42514,7 +43054,10 @@ const countries = [
             root: '+2',
             suffixes: ['63'],
         },
-        capital: ['Harare'],
+        capital: {
+            eng: 'Harare',
+            spa: 'Harare',
+        },
         altSpellings: ['ZW', 'Republic of Zimbabwe'],
         region: 'Africa',
         subregion: 'Southern Africa',
@@ -42895,7 +43438,10 @@ const countries = [
             root: '+6',
             suffixes: ['73'],
         },
-        capital: ['Bandar Seri Begawan'],
+        capital: {
+            eng: 'Bandar Seri Begawan',
+            spa: 'Bandar Seri Begawan',
+        },
         altSpellings: [
             'BN',
             'Brunei Darussalam',
@@ -43083,7 +43629,10 @@ const countries = [
             root: '+4',
             suffixes: ['5'],
         },
-        capital: ['Copenhagen'],
+        capital: {
+            eng: 'Copenhagen',
+            spa: 'Copenhague',
+        },
         altSpellings: [
             'DK',
             'Danmark',
@@ -43282,7 +43831,10 @@ const countries = [
             root: '+3',
             suffixes: ['2'],
         },
-        capital: ['Brussels'],
+        capital: {
+            eng: 'Brussels',
+            spa: 'Bruselas',
+        },
         altSpellings: [
             'BE',
             'België',
@@ -43660,7 +44212,10 @@ const countries = [
             root: '+8',
             suffixes: ['56'],
         },
-        capital: ['Vientiane'],
+        capital: {
+            eng: 'Vientiane',
+            spa: 'Vientián',
+        },
         altSpellings: [
             'LA',
             'Lao',
@@ -43855,7 +44410,10 @@ const countries = [
             root: '+6',
             suffixes: ['76'],
         },
-        capital: ["Nuku'alofa"],
+        capital: {
+            eng: "Nuku'alofa",
+            spa: 'Nukualofa',
+        },
         altSpellings: ['TO'],
         region: 'Oceania',
         subregion: 'Polynesia',
@@ -44037,7 +44595,10 @@ const countries = [
             root: '+3',
             suffixes: ['76'],
         },
-        capital: ['Andorra la Vella'],
+        capital: {
+            eng: 'Andorra la Vella',
+            spa: 'Andorra la Vieja',
+        },
         altSpellings: ['AD', 'Principality of Andorra', "Principat d'Andorra"],
         region: 'Europe',
         subregion: 'Southern Europe',
@@ -44586,7 +45147,10 @@ const countries = [
             root: '+2',
             suffixes: ['66'],
         },
-        capital: ['Maseru'],
+        capital: {
+            eng: 'Maseru',
+            spa: 'Maseru',
+        },
         altSpellings: ['LS', 'Kingdom of Lesotho', 'Muso oa Lesotho'],
         region: 'Africa',
         subregion: 'Southern Africa',
@@ -44773,7 +45337,10 @@ const countries = [
             root: '+1',
             suffixes: ['767'],
         },
-        capital: ['Roseau'],
+        capital: {
+            eng: 'Roseau',
+            spa: 'Roseau',
+        },
         altSpellings: [
             'DM',
             'Dominique',
@@ -44960,7 +45527,10 @@ const countries = [
             root: '+2',
             suffixes: ['52'],
         },
-        capital: ['Mogadishu'],
+        capital: {
+            eng: 'Mogadishu',
+            spa: 'Mogadiscio',
+        },
         altSpellings: [
             'SO',
             'aṣ-Ṣūmāl',
@@ -45153,7 +45723,10 @@ const countries = [
             root: '+3',
             suffixes: ['85'],
         },
-        capital: ['Zagreb'],
+        capital: {
+            eng: 'Zagreb',
+            spa: 'Zagreb',
+        },
         altSpellings: [
             'HR',
             'Hrvatska',
@@ -45344,7 +45917,10 @@ const countries = [
             root: '+2',
             suffixes: ['32'],
         },
-        capital: ['Freetown'],
+        capital: {
+            eng: 'Freetown',
+            spa: 'Freetown',
+        },
         altSpellings: ['SL', 'Republic of Sierra Leone'],
         region: 'Africa',
         subregion: 'Western Africa',
@@ -46225,7 +46801,10 @@ const countries = [
             root: '+2',
             suffixes: ['57'],
         },
-        capital: ['Gitega'],
+        capital: {
+            eng: 'Gitega',
+            spa: 'Guitega',
+        },
         altSpellings: [
             'BI',
             'Republic of Burundi',
@@ -46413,7 +46992,10 @@ const countries = [
             root: '+2',
             suffixes: ['21'],
         },
-        capital: ['Dakar'],
+        capital: {
+            eng: 'Dakar',
+            spa: 'Dakar',
+        },
         altSpellings: ['SN', 'Republic of Senegal', 'République du Sénégal'],
         region: 'Africa',
         subregion: 'Western Africa',
@@ -46599,7 +47181,10 @@ const countries = [
             root: '+2',
             suffixes: ['51'],
         },
-        capital: ['Addis Ababa'],
+        capital: {
+            eng: 'Addis Ababa',
+            spa: 'Adís Abeba',
+        },
         altSpellings: [
             'ET',
             'ʾĪtyōṗṗyā',
@@ -46798,7 +47383,10 @@ const countries = [
             root: '+3',
             suffixes: ['52'],
         },
-        capital: ['Luxembourg'],
+        capital: {
+            eng: 'Luxembourg',
+            spa: 'Luxemburgo',
+        },
         altSpellings: [
             'LU',
             'Grand Duchy of Luxembourg',
@@ -46993,7 +47581,10 @@ const countries = [
             root: '+8',
             suffixes: ['6'],
         },
-        capital: ['Beijing'],
+        capital: {
+            eng: 'Beijing',
+            spa: 'Pekín',
+        },
         altSpellings: [
             'CN',
             'Zhōngguó',
