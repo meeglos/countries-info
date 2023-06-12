@@ -16,54 +16,10 @@ const CountryProvider = ({ children }) => {
     const [filteredCountries, setFilteredCountries] = useState();
     const [filteredRegion, setFilteredRegion] = useState();
     const [modal, setModal] = useState(false);
-    const [regionCfg, setRegionCfg] = useState(0);
-    const [timerCfg, setTimerCfg] = useState(0);
-    const [questionCfg, setQuestionCfg] = useState(5);
-    const [isHidden, setIsHidden] = useState(false);
-    const [randomElements, setRandomElements] = useState();
+    const [countryInfo, setCountryInfo] = useState({});
 
-    // setCountries(extractedValues);
-
-    const handleSetRegion = event => {
-        const regionCfg = event.target.value;
-        setRegionCfg(regionCfg);
-        console.log(regionCfg);
-    };
-
-    const handleSetTimer = event => {
-        const timerCfg = event.target.value;
-        setTimerCfg(timerCfg);
-        console.log(timerCfg);
-    };
-
-    const handleSetQuestions = event => {
-        const questionCfg = event.target.value;
-        setQuestionCfg(questionCfg);
-        console.log(questionCfg);
-    };
-
-    const handleClickStart = () => {
-        // console.log('Jugaré con ' + regionCfg);
-        const title = 'Jugando con' + regionCfg;
-        const questions = [];
-
-        // ocultamos configuración y mostramos las preguntas
-        setIsHidden(true);
-
-        // mostramos un spinner con mensaje mientras se generan las preguntas
-
-        // seleccionamos las preguntas en base a questionCfg y regionCfg
-        const randomIndices = [];
-        while (randomIndices.length < questionCfg) {
-            const randomIndex = Math.floor(Math.random() * countries.length);
-            console.log(Math.random() * countries.length);
-            if (!randomIndices.includes(randomIndex)) {
-                randomIndices.push(randomIndex);
-            }
-        }
-        const randomElements = randomIndices.map(index => countries[index]);
-        setRandomElements(randomElements);
-        // mostramos la pregunta 1, el puntaje acumulado, <pregunta 1 de 8>
+    const handleSetCountryInfo = countryInfo => {
+        setCountryInfo(countryInfo);
     };
 
     const handleClickModal = () => {
@@ -175,16 +131,9 @@ const CountryProvider = ({ children }) => {
                 handleSearchKeyUp,
                 modal,
                 handleClickModal,
-                handleSetRegion,
-                handleSetTimer,
-                handleSetQuestions,
-                handleClickStart,
-                regionCfg,
-                timerCfg,
-                questionCfg,
-                isHidden,
-                randomElements,
                 independentCountries,
+                countryInfo,
+                handleSetCountryInfo,
             }}
         >
             {children}

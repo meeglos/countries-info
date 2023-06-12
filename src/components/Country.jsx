@@ -1,7 +1,7 @@
 import useCountry from '../hooks/useCountry';
 
 export default function Country() {
-    const { countries } = useCountry();
+    const { countries, handleClickModal, handleSetCountryInfo } = useCountry();
 
     const independentCountries = countries.filter(
         obj => obj.independent === true
@@ -16,7 +16,11 @@ export default function Country() {
             {filteredCountries.map(country => (
                 <div
                     key={country.cca2}
-                    className='overflow-hidden rounded-lg bg-white shadow-xl border border-slate-200'
+                    className='overflow-hidden rounded-lg bg-white shadow-xl border border-slate-200 cursor-pointer'
+                    onClick={() => {
+                        handleClickModal();
+                        handleSetCountryInfo(country);
+                    }}
                 >
                     <div
                         className='flex h-32 items-center justify-end bg-cover bg-center p-4 relative'

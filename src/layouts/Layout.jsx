@@ -5,7 +5,7 @@ import SubRegion from '../components/SubRegion';
 import Language from '../components/Language';
 import Search from '../components/Search';
 import Country from '../components/Country';
-import Quiz from '../components/Quiz';
+import CountryInfo from '../components/CountryInfo';
 
 Modal.setAppElement('#root');
 export default function Layout() {
@@ -34,6 +34,7 @@ export default function Layout() {
                     <div className='w-full lg:w-1/2'>
                         <Search />
                     </div>
+<<<<<<< HEAD
                     {/* <div className='w-full lg:w-2/3'>
                         <div className='p-2'>
                             <button
@@ -77,6 +78,8 @@ export default function Layout() {
                             </button>
                         </div>
                     </div> */}
+=======
+>>>>>>> country-info-modal
                 </div>
                 <div className='flex flex-col lg:flex-row w-full lg:w-2/3 lg:justify-between  p-2 space-y-2 items-center border rounded-lg border-dotted border-slate-300'>
                     <div className='w-full lg:w-1/2'>
@@ -102,7 +105,7 @@ export default function Layout() {
                 isOpen={modal}
                 style={{ background: '#ff0' }}
             >
-                <Quiz />
+                <CountryInfo />
             </Modal>
         </>
     );
