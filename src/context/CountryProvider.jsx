@@ -123,6 +123,7 @@ const CountryProvider = ({ children }) => {
             value={{
                 regions,
                 countries,
+                countriesDB,
                 subRegions,
                 handleRegionChange,
                 handleSubRegionChange,

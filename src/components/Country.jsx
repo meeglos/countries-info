@@ -68,7 +68,8 @@ export default function Country() {
                                     Población:
                                 </span>{' '}
                                 <span className='text-xs font-bold text-gray-900'>
-                                    {country.population} habs.
+                                    {country.population.toLocaleString('es-ES')}{' '}
+                                    habs.
                                 </span>
                             </p>
                         </div>
@@ -79,7 +80,8 @@ export default function Country() {
                                     Extensión:
                                 </span>{' '}
                                 <span className='text-xs font-bold text-gray-900'>
-                                    {country.area} km<sup>2</sup>
+                                    {country.area.toLocaleString('es-ES')} km
+                                    <sup>2</sup>
                                 </span>
                             </p>
                         </div>

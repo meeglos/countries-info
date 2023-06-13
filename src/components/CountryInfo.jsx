@@ -1,7 +1,7 @@
 import useCountry from '../hooks/useCountry';
 
 export default function CountryInfo() {
-    const { handleClickModal, countryInfo, countries } = useCountry();
+    const { handleClickModal, countryInfo, countriesDB } = useCountry();
 
     const languages = Object.entries(countryInfo.languages).map(
         ([key, value], index, arr) => {
@@ -17,37 +17,42 @@ export default function CountryInfo() {
     );
 
     function getFlagByCca3(cca3) {
-        const country = countries.find(country => country.cca3 === cca3);
+        const country = countriesDB.find(country => country.cca3 === cca3);
         return country ? country.flags.svg : null;
     }
 
-    const currencies = Object.entries(countryInfo.currencies).map(
-        ([key, value], index, arr) => {
-            const isLast = index === arr.length - 1;
+    function getCountryNameByCca3(cca3) {
+        const country = countriesDB.find(country => country.cca3 === cca3);
+        return country ? country.translations.spa.common : cca3;
+    }
 
-            return (
-                <span key={key}>
-                    {value}
-                    {!isLast && ', '}
-                </span>
-            );
-        }
-    );
+    function getCurrencyInfo(currencies) {
+        return Object.entries(currencies).map(
+            ([currencyCode, currencyInfo]) => {
+                const { name, symbol } = currencyInfo;
+                return { code: currencyCode, name, symbol };
+            }
+        );
+    }
+
+    const currencyInfo = getCurrencyInfo(countryInfo.currencies);
 
     const renderObjectValuesWithCommas = obj => {
         if (obj) {
             const keys = Object.keys(obj);
             return keys.map((key, index) => (
                 <div
-                    className='flex items-center space-x-2'
+                    className='flex items-center space-x-2 my-1'
                     key={key}
                 >
-                    <img
-                        className='h-4 w-4 rounded-full border'
-                        src={getFlagByCca3(obj[key])}
-                        alt={`Flag of ${obj[key]}`}
-                    />
-                    <span>{obj[key]}</span>
+                    <div className='h-5 w-5 rounded-full overflow-hidden  border border-gray-300'>
+                        <img
+                            className='h-full w-full object-cover'
+                            src={getFlagByCca3(obj[key])}
+                            alt={`Flag of ${obj[key]}`}
+                        />
+                    </div>
+                    <span>{getCountryNameByCca3(obj[key])}</span>
                     {index !== keys.length - 1 && (
                         <span className='-mr-2'></span>
                     )}
@@ -98,7 +103,7 @@ export default function CountryInfo() {
                                     </div>
                                     <div className='table-row'>
                                         <div className='table-cell px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800'>
-                                            Area
+                                            Área
                                         </div>
                                         <div className='table-cell px-6 py-4 whitespace-nowrap text-sm text-gray-800'>
                                             {countryInfo.area.toLocaleString(
@@ -125,6 +130,29 @@ export default function CountryInfo() {
                                         </div>
                                         <div className='table-cell px-6 py-4 whitespace-nowrap text-sm text-gray-800'>
                                             {countryInfo?.demonyms.eng.m}
+                                        </div>
+                                    </div>
+                                    <div className='table-row'>
+                                        <div className='table-cell px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800'>
+                                            Horario
+                                        </div>
+                                        <div className='table-cell px-6 py-4 whitespace-nowrap text-sm text-gray-800'>
+                                            {countryInfo?.timezones}
+                                        </div>
+                                    </div>
+                                    <div className='table-row'>
+                                        <div className='table-cell px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800'>
+                                            Moneda
+                                        </div>
+                                        <div className='table-cell px-6 py-4 whitespace-nowrap text-sm text-gray-800'>
+                                            {currencyInfo.map(currency => (
+                                                <div key={currency.code}>
+                                                    {currency.name}
+                                                    <span className='mx-2 font-bold'>
+                                                        ({currency.symbol})
+                                                    </span>
+                                                </div>
+                                            ))}
                                         </div>
                                     </div>
                                     <div className='table-row'>
@@ -160,7 +188,7 @@ export default function CountryInfo() {
                         viewBox='0 0 24 24'
                         strokeWidth={1.5}
                         stroke='currentColor'
-                        className='w-10 h-10'
+                        className='w-10 h-10 text-red-500'
                     >
                         <path
                             strokeLinecap='round'

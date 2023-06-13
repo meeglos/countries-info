@@ -46006,7 +46006,7 @@ const countries = [
             },
             spa: {
                 official: 'República de Sierra Leona',
-                common: 'Sierra Leone',
+                common: 'Sierra Leona',
             },
             srp: {
                 official: 'Република Сијера Леоне',
