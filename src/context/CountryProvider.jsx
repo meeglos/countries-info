@@ -4,7 +4,6 @@ import { subregions as subregionsDB } from '../data/subregions';
 import { countries as countriesDB } from '../data/countries';
 
 const CountryContext = createContext();
-
 const independentCountries = countriesDB.filter(
     obj => obj.independent === true
 );
@@ -18,29 +17,13 @@ const CountryProvider = ({ children }) => {
     const [modal, setModal] = useState(false);
     const [countryInfo, setCountryInfo] = useState({});
 
+    // const [questionIndex, setQuestionIndex] = useState(1);
+    // const [gameOver, setGameOver] = useState(true);
+    const [score, setScore] = useState(0);
     const [countryData, setCountryData] = useState(independentCountries);
-    const [currentQuestion, setCurrentQuestion] = useState(0);
-
-    const getNextQuestion = () => {
-        setCurrentQuestion(prevQuestion => prevQuestion + 1);
-    };
 
     const getCountryData = () => {
         return countryData[currentQuestion];
-    };
-
-    const updateAnswer = answer => {
-        const correctAnswer = countryData[currentQuestion].capital.spa;
-        const isCorrect = answer === correctAnswer;
-
-        setCountryData(prevData => {
-            const updatedData = [...prevData];
-            updatedData[currentQuestion].answered = true;
-            updatedData[currentQuestion].isCorrect = isCorrect;
-            return updatedData;
-        });
-
-        getNextQuestion();
     };
 
     const handleSetCountryInfo = countryInfo => {
@@ -161,7 +144,9 @@ const CountryProvider = ({ children }) => {
                 countryInfo,
                 handleSetCountryInfo,
                 getCountryData,
-                updateAnswer,
+                // updateAnswer,
+                score,
+                setScore,
             }}
         >
             {children}
