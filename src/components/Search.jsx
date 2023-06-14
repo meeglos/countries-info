@@ -8,7 +8,7 @@ export default function Search() {
                 <input
                     type='text'
                     className='form-input mt-1 block w-full border-slate-300 border-dotted rounded-lg'
-                    placeholder='Ingrese el nombre del país - Ej: España'
+                    placeholder='Buscar por país o capital...'
                     onKeyUp={handleSearchKeyUp}
                 />
             </label>
