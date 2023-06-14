@@ -6,6 +6,7 @@ import Language from '../components/Language';
 import Search from '../components/Search';
 import Country from '../components/Country';
 import CountryInfo from '../components/CountryInfo';
+import { Link } from 'react-router-dom';
 
 Modal.setAppElement('#root');
 export default function Layout() {
@@ -30,6 +31,14 @@ export default function Layout() {
                     </span>{' '}
                     reconocidos por la ONU hasta el año 2023.
                 </p>
+                <div>
+                    <Link
+                        to={'/quiz-game'}
+                        className='px-5 py-2 rounded-l-lg bg-gradient-to-tl from-indigo-900 via-indigo-400 to-indigo-900 text-white font-bold font-dm shadow-lg border-1 border-red-700 z-10 absolute top-10 right-0 hover:bg-gradient-to-bl hover:from-indigo-900 hover:via-indigo-400 hover:to-indigo-900'
+                    >
+                        PLAY
+                    </Link>
+                </div>
                 <div className='flex flex-col lg:flex-row w-full lg:w-2/3 lg:justify-between p-2 space-y-2 items-center border rounded-lg border-dotted border-slate-300'>
                     <div className='w-full lg:w-1/2'>
                         <Search />
