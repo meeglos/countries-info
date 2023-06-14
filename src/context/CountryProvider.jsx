@@ -18,6 +18,31 @@ const CountryProvider = ({ children }) => {
     const [modal, setModal] = useState(false);
     const [countryInfo, setCountryInfo] = useState({});
 
+    const [countryData, setCountryData] = useState(independentCountries);
+    const [currentQuestion, setCurrentQuestion] = useState(0);
+
+    const getNextQuestion = () => {
+        setCurrentQuestion(prevQuestion => prevQuestion + 1);
+    };
+
+    const getCountryData = () => {
+        return countryData[currentQuestion];
+    };
+
+    const updateAnswer = answer => {
+        const correctAnswer = countryData[currentQuestion].capital.spa;
+        const isCorrect = answer === correctAnswer;
+
+        setCountryData(prevData => {
+            const updatedData = [...prevData];
+            updatedData[currentQuestion].answered = true;
+            updatedData[currentQuestion].isCorrect = isCorrect;
+            return updatedData;
+        });
+
+        getNextQuestion();
+    };
+
     const handleSetCountryInfo = countryInfo => {
         setCountryInfo(countryInfo);
     };
@@ -135,6 +160,8 @@ const CountryProvider = ({ children }) => {
                 independentCountries,
                 countryInfo,
                 handleSetCountryInfo,
+                getCountryData,
+                updateAnswer,
             }}
         >
             {children}
