@@ -2,9 +2,10 @@ import { useState, useEffect } from 'react';
 import useCountry from '../hooks/useCountry';
 
 const QuizLayout = () => {
+    const { independentCountries, score, setScore } = useCountry();
     const [question, setQuestion] = useState('');
     const [options, setOptions] = useState([]);
-    const [timeLeft, setTimeLeft] = useState(5);
+    const [timeLeft, setTimeLeft] = useState(10);
 
     const [backgroundColor, setBackgroundColor] = useState('bg-yellow-500');
     const [defaultColor, setDefaultColor] = useState('bg-yellow-500');
@@ -14,7 +15,11 @@ const QuizLayout = () => {
     const [questionIndex, setQuestionIndex] = useState(1);
     const [gameOver, setGameOver] = useState(false);
 
-    const { independentCountries, score, setScore } = useCountry();
+    const [countryData, setCountryData] = useState(independentCountries);
+
+    const getCountryData = () => {
+        return countryData[questionIndex];
+    };
 
     useEffect(() => {
         const interval = setInterval(() => {
@@ -29,30 +34,7 @@ const QuizLayout = () => {
         return () => {
             clearInterval(interval);
         };
-    }, [timeLeft]);
-
-    // const updateAnswer = answer => {
-    //     const correctAnswer = countryData[currentQuestion].capital.spa;
-    //     const isCorrect = answer === correctAnswer;
-
-    //     setCountryData(prevData => {
-    //         const updatedData = [...prevData];
-    //         updatedData[currentQuestion].answered = true;
-    //         updatedData[currentQuestion].isCorrect = isCorrect;
-    //         return updatedData;
-    //     });
-
-    //     getNextQuestion();
-    // };
-
-    // const getNextQuestion = () => {
-    //     if (questionIndex < 9) {
-    //         setScore(prevScore => prevScore + 2);
-    //         setQuestionIndex(prevIndex => prevIndex + 1);
-    //     } else {
-    //         setGameOver(true);
-    //     }
-    // };
+    }, [timeLeft, gameOver]);
 
     const startGame = () => {
         setScore(0);
@@ -78,9 +60,18 @@ const QuizLayout = () => {
                 correctAnswer,
                 randomKey
             );
-
+            const allOptions = shuffleArray([
+                correctAnswer,
+                ...incorrectOptions,
+            ]);
             setQuestion(countryData[randomKey].translations.spa.common);
-            setOptions([correctAnswer, ...incorrectOptions]);
+            setOptions(allOptions);
+            setSelectedOptionIndex(-1); // Reset selected option index
+
+            console.log('¿cuál es la capital de ' + question + '?');
+            console.log('Opciones:' + allOptions);
+            console.log('Respuesta correcta:' + correctAnswer);
+            console.log('-------------------------------------');
         }
     };
 
@@ -109,31 +100,41 @@ const QuizLayout = () => {
     };
 
     const handleAnswer = selectedOption => {
-        const correctAnswer = options[0];
-        const selectedOptionIndex = options.indexOf(selectedOption);
-
+        const correctAnswer = getCountryData().capital.spa;
+        /*         console.log('Correct answer:' + correctAnswer);
+        console.log('Selected answer:' + selectedOption); */
         if (selectedOption === correctAnswer) {
-            console.log('Respuesta correcta');
+            // console.log('Respuesta correcta');
             setScore(prevScore => prevScore + 10);
             setBackgroundColor('bg-green-500');
         } else {
-            console.log('Respuesta incorrecta');
+            // console.log('Respuesta incorrecta');
             setBackgroundColor('bg-red-500');
         }
+        const selectedOptionIndex = options.indexOf(selectedOption);
         setSelectedOptionIndex(selectedOptionIndex);
 
-        setTimeLeft(5);
+        setTimeLeft(10);
 
         setTimeout(() => {
             setSelectedOptionIndex(-1);
-            generateQuestion();
-            actualizarWidth();
-            if (questionIndex < 9) {
+            if (questionIndex < 10) {
                 setQuestionIndex(prevIndex => prevIndex + 1);
+                generateQuestion();
+                actualizarWidth();
             } else {
                 setGameOver(true);
             }
         }, 1000);
+    };
+
+    const shuffleArray = array => {
+        const newArray = [...array];
+        for (let i = newArray.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [newArray[i], newArray[j]] = [newArray[j], newArray[i]];
+        }
+        return newArray;
     };
 
     const getQuestionData = () => {
@@ -161,7 +162,7 @@ const QuizLayout = () => {
                             <div className='w-full h-4 mb-1 bg-gray-200 rounded-full '>
                                 <div
                                     className='h-4 bg-green-500 rounded-full '
-                                    style={{ width: width }}
+                                    style={{ width }}
                                 ></div>
                             </div>
                             <div className='flex flex-row justify-between text-white text-sm font-thin tracking-wide mb-1'>

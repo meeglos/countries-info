@@ -17,14 +17,12 @@ const CountryProvider = ({ children }) => {
     const [modal, setModal] = useState(false);
     const [countryInfo, setCountryInfo] = useState({});
 
-    // const [questionIndex, setQuestionIndex] = useState(1);
-    // const [gameOver, setGameOver] = useState(true);
     const [score, setScore] = useState(0);
-    const [countryData, setCountryData] = useState(independentCountries);
+    // const [countryData, setCountryData] = useState(independentCountries);
 
-    const getCountryData = () => {
-        return countryData[currentQuestion];
-    };
+    // const getCountryData = () => {
+    //     return countryData[questionIndex];
+    // };
 
     const handleSetCountryInfo = countryInfo => {
         setCountryInfo(countryInfo);
@@ -143,7 +141,7 @@ const CountryProvider = ({ children }) => {
                 independentCountries,
                 countryInfo,
                 handleSetCountryInfo,
-                getCountryData,
+                // getCountryData,
                 // updateAnswer,
                 score,
                 setScore,
