@@ -18,11 +18,12 @@ const CountryProvider = ({ children }) => {
     const [countryInfo, setCountryInfo] = useState({});
 
     const [gameStarted, setGameStarted] = useState(false);
-    const [numQuestions, setNumQuestions] = useState(0);
-    const [timePerQuestion, setTimePerQuestion] = useState(0);
+    const [numQuestions, setNumQuestions] = useState(10);
+    const [timePerQuestion, setTimePerQuestion] = useState(20);
     const [continent, setContinent] = useState('');
 
     const [score, setScore] = useState(0);
+    const [correctAnswers, setCorrectAnswers] = useState(0);
 
     const handleStartGame = (questions, time, cont) => {
         setNumQuestions(questions);
@@ -150,6 +151,17 @@ const CountryProvider = ({ children }) => {
                 handleSetCountryInfo,
                 score,
                 setScore,
+                handleStartGame,
+                numQuestions,
+                timePerQuestion,
+                continent,
+                gameStarted,
+                setGameStarted,
+                setNumQuestions,
+                setTimePerQuestion,
+                setContinent,
+                correctAnswers,
+                setCorrectAnswers,
             }}
         >
             {children}

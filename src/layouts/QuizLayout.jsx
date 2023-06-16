@@ -2,10 +2,21 @@ import { useState, useEffect } from 'react';
 import useCountry from '../hooks/useCountry';
 
 const QuizLayout = () => {
-    const { independentCountries, score, setScore } = useCountry();
+    const {
+        independentCountries,
+        score,
+        setScore,
+        numQuestions,
+        timePerQuestion,
+        continent,
+        gameStarted,
+        correctAnswers,
+        setCorrectAnswers,
+    } = useCountry();
+
     const [question, setQuestion] = useState('');
     const [options, setOptions] = useState([]);
-    const [timeLeft, setTimeLeft] = useState(20);
+    const [timeLeft, setTimeLeft] = useState(timePerQuestion);
     const [correctAnswer, setCorrectAnswer] = useState('');
 
     const [backgroundColor, setBackgroundColor] = useState('bg-yellow-500');
@@ -21,7 +32,8 @@ const QuizLayout = () => {
         setQuestionIndex(1);
         setGameOver(false);
         setWidth('0%');
-        setTimeLeft(20);
+        setTimeLeft(timeLeft);
+        setCorrectAnswers(0);
     };
 
     useEffect(() => {
@@ -51,7 +63,7 @@ const QuizLayout = () => {
     }, [timeLeft, gameOver]);
 
     const actualizarWidth = () => {
-        const newWidth = `${questionIndex * 10}%`;
+        const newWidth = `${questionIndex * (100 / numQuestions)}%`;
         setWidth(newWidth);
     };
 
@@ -107,7 +119,8 @@ const QuizLayout = () => {
     const handleAnswer = selectedOption => {
         const selectedOptionTrimmed = selectedOption.trim();
         if (selectedOptionTrimmed === correctAnswer) {
-            setScore(prevScore => prevScore + 10);
+            setScore(prevScore => prevScore + 100 / numQuestions);
+            setCorrectAnswers(correctAnswers => correctAnswers + 1);
             setBackgroundColor('bg-green-500');
         } else {
             setBackgroundColor('bg-red-500');
@@ -116,11 +129,11 @@ const QuizLayout = () => {
         const selectedOptionIndex = options.indexOf(selectedOption);
         setSelectedOptionIndex(selectedOptionIndex);
 
-        setTimeLeft(20);
+        setTimeLeft(timePerQuestion);
 
         setTimeout(() => {
             setSelectedOptionIndex(-1);
-            if (questionIndex < 10) {
+            if (questionIndex < numQuestions) {
                 setQuestionIndex(prevIndex => prevIndex + 1);
             } else {
                 setGameOver(true);
@@ -157,9 +170,16 @@ const QuizLayout = () => {
                         <h1 className='text-2xl text-red-500 uppercase my-6'>
                             Juego terminado
                         </h1>
-                        <p className='text-2xl text-white my-6'>
-                            Puntaje obtenido: {score}
-                        </p>
+                        <div className='text-2xl text-white my-6 flex flex-col justify-center items-center space-y-2'>
+                            <p>Puntaje obtenido:</p>
+                            <p className='text-yellow-500 font-bold text-3xl'>
+                                {score.toFixed(2)}
+                                <span className='text-xl'>/100</span>
+                            </p>
+                            <p className='text-lg text-red-500'>
+                                ({correctAnswers} aciertos de {numQuestions})
+                            </p>
+                        </div>
                         <button
                             className='bg-yellow-500 mt-6 rounded-full uppercase tracking-widest text-gray-700 border-red-600 border-2 px-6 py-2 text-lg font-semibold font-dm'
                             onClick={startGame}
@@ -179,9 +199,12 @@ const QuizLayout = () => {
                                 </div>
                                 <div className='flex flex-row justify-between text-white text-sm font-thin tracking-wide mb-1'>
                                     <div className='font-dm'>
-                                        Pregunta {questionIndex} de 10
+                                        Pregunta {questionIndex} de{' '}
+                                        {numQuestions}
                                     </div>
-                                    <div className='font-dm'>{score}/100</div>
+                                    <div className='font-dm'>
+                                        {score.toFixed(2)}/100
+                                    </div>
                                 </div>
                             </div>
                         </div>
