@@ -17,7 +17,19 @@ const CountryProvider = ({ children }) => {
     const [modal, setModal] = useState(false);
     const [countryInfo, setCountryInfo] = useState({});
 
+    const [gameStarted, setGameStarted] = useState(false);
+    const [numQuestions, setNumQuestions] = useState(0);
+    const [timePerQuestion, setTimePerQuestion] = useState(0);
+    const [continent, setContinent] = useState('');
+
     const [score, setScore] = useState(0);
+
+    const handleStartGame = (questions, time, cont) => {
+        setNumQuestions(questions);
+        setTimePerQuestion(time);
+        setContinent(cont);
+        setGameStarted(true);
+    };
 
     const handleSetCountryInfo = countryInfo => {
         setCountryInfo(countryInfo);

@@ -10,13 +10,7 @@ import { Link } from 'react-router-dom';
 
 Modal.setAppElement('#root');
 export default function Layout() {
-    const {
-        countries,
-        modal,
-        handleClickModal,
-        filteredCountries,
-        independentCountries,
-    } = useCountry();
+    const { countries, modal } = useCountry();
 
     return (
         <>
@@ -33,7 +27,7 @@ export default function Layout() {
                 </p>
                 <div>
                     <Link
-                        to={'/quiz-game'}
+                        to={'/initial-screen'}
                         className='px-5 py-2 rounded-l-lg bg-gradient-to-tl from-indigo-900 via-indigo-400 to-indigo-900 text-white font-bold font-dm shadow-lg border-1 border-red-700 z-10 absolute top-10 right-0 hover:bg-gradient-to-bl hover:from-indigo-900 hover:via-indigo-400 hover:to-indigo-900'
                     >
                         PLAY
