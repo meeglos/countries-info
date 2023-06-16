@@ -40159,7 +40159,7 @@ const countries = [
         },
         capital: {
             eng: 'Valletta',
-            spa: 'La valeta',
+            spa: 'La Valeta',
         },
         altSpellings: ['MT', 'Republic of Malta', "Repubblika ta' Malta"],
         region: 'Europe',

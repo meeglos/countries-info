@@ -4,7 +4,6 @@ import { subregions as subregionsDB } from '../data/subregions';
 import { countries as countriesDB } from '../data/countries';
 
 const CountryContext = createContext();
-
 const independentCountries = countriesDB.filter(
     obj => obj.independent === true
 );
@@ -17,6 +16,8 @@ const CountryProvider = ({ children }) => {
     const [filteredRegion, setFilteredRegion] = useState();
     const [modal, setModal] = useState(false);
     const [countryInfo, setCountryInfo] = useState({});
+
+    const [score, setScore] = useState(0);
 
     const handleSetCountryInfo = countryInfo => {
         setCountryInfo(countryInfo);
@@ -137,6 +138,8 @@ const CountryProvider = ({ children }) => {
                 independentCountries,
                 countryInfo,
                 handleSetCountryInfo,
+                score,
+                setScore,
             }}
         >
             {children}
