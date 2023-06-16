@@ -18,11 +18,6 @@ const CountryProvider = ({ children }) => {
     const [countryInfo, setCountryInfo] = useState({});
 
     const [score, setScore] = useState(0);
-    // const [countryData, setCountryData] = useState(independentCountries);
-
-    // const getCountryData = () => {
-    //     return countryData[questionIndex];
-    // };
 
     const handleSetCountryInfo = countryInfo => {
         setCountryInfo(countryInfo);
@@ -141,8 +136,6 @@ const CountryProvider = ({ children }) => {
                 independentCountries,
                 countryInfo,
                 handleSetCountryInfo,
-                // getCountryData,
-                // updateAnswer,
                 score,
                 setScore,
             }}
