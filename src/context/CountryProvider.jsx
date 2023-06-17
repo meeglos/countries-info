@@ -20,7 +20,7 @@ const CountryProvider = ({ children }) => {
     const [gameStarted, setGameStarted] = useState(false);
     const [numQuestions, setNumQuestions] = useState(10);
     const [timePerQuestion, setTimePerQuestion] = useState(20);
-    const [continent, setContinent] = useState('');
+    const [continent, setContinent] = useState('Todos');
 
     const [score, setScore] = useState(0);
     const [correctAnswers, setCorrectAnswers] = useState(0);
