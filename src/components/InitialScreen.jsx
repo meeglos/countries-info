@@ -22,6 +22,10 @@ const InitialScreen = () => {
         );
     };
 
+    const handleBackHome = () => {
+        navigate(`/`);
+    };
+
     return (
         <div>
             <div className='h-screen p-5 bg-gradient-to-bl from-indigo-900  via-indigo-600 to-indigo-900'>
@@ -41,7 +45,7 @@ const InitialScreen = () => {
                             htmlFor='visitors'
                             className='block mb-2 text-sm font-medium text-white'
                         >
-                            Número de preguntas
+                            Número de preguntas:
                         </label>
                         <input
                             type='number'
@@ -49,7 +53,7 @@ const InitialScreen = () => {
                             onChange={e =>
                                 setNumQuestions(parseInt(e.target.value))
                             }
-                            className='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500  p-2.5'
+                            className='bg-yellow-500 hover:bg-yellow-600 text-center uppercase tracking-widest text-white rounded-lg shadow-sm  px-6 py-2 text-sm flex items-center justify-center font-semibold font-dm w-48'
                         />
                     </div>
                     <div>
@@ -66,7 +70,7 @@ const InitialScreen = () => {
                             onChange={e =>
                                 setTimePerQuestion(parseInt(e.target.value))
                             }
-                            className='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500  p-2.5'
+                            className='bg-yellow-500 hover:bg-yellow-600 text-center uppercase tracking-widest text-white rounded-lg shadow-sm  px-6 py-2 text-sm flex items-center justify-center font-semibold font-dm w-48'
                         />
                     </div>
                     <div>
@@ -74,11 +78,11 @@ const InitialScreen = () => {
                             htmlFor='countries'
                             className='block mb-2 text-sm font-medium text-white'
                         >
-                            Selecciona un continente
+                            Selecciona un continente:
                         </label>
                         <select
                             value={continent}
-                            className='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-indigo-600 focus:border-indigo-600 block w-full p-2.5 y-700 -gray-600 older-gray-400 hite ring-indigo-600 '
+                            className='bg-yellow-500 hover:bg-yellow-600 text-center uppercase tracking-widest text-white rounded-lg shadow-sm  px-6 py-2 text-sm flex items-center justify-center font-semibold font-dm w-48'
                             onChange={e => setContinent(e.target.value)}
                         >
                             <option value='Todos'>Todos</option>
@@ -89,26 +93,48 @@ const InitialScreen = () => {
                             <option value='Oceania'>Oceanía</option>
                         </select>
                     </div>
-                    <button
-                        className='bg-yellow-500 mt-6 rounded-full uppercase tracking-widest text-gray-700 border-red-600 border-2 px-6 py-2 text-sm flex items-center font-semibold font-dm'
-                        onClick={handleStartGame}
-                    >
-                        <svg
-                            xmlns='http://www.w3.org/2000/svg'
-                            fill='none'
-                            viewBox='0 0 24 24'
-                            strokeWidth={1.5}
-                            stroke='currentColor'
-                            className='w-6 h-6 mr-3'
+                    <div className='mt-8'>
+                        <button
+                            className='bg-green-500 hover:bg-green-600 mt-6 uppercase tracking-widest text-white rounded-sm shadow-sm  px-6 py-2 text-sm flex items-center justify-center font-semibold font-dm w-48'
+                            onClick={handleStartGame}
                         >
-                            <path
-                                strokeLinecap='round'
-                                strokeLinejoin='round'
-                                d='M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.348a1.125 1.125 0 010 1.971l-11.54 6.347a1.125 1.125 0 01-1.667-.985V5.653z'
-                            />
-                        </svg>
-                        Comenzar
-                    </button>
+                            <svg
+                                xmlns='http://www.w3.org/2000/svg'
+                                fill='none'
+                                viewBox='0 0 24 24'
+                                strokeWidth={1.5}
+                                stroke='currentColor'
+                                className='w-6 h-6 mr-3'
+                            >
+                                <path
+                                    strokeLinecap='round'
+                                    strokeLinejoin='round'
+                                    d='M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.348a1.125 1.125 0 010 1.971l-11.54 6.347a1.125 1.125 0 01-1.667-.985V5.653z'
+                                />
+                            </svg>
+                            Comenzar
+                        </button>
+                        <button
+                            className='bg-sky-500 hover:bg-sky-600 mt-6 uppercase tracking-widest text-white rounded-sm shadow-sm  px-6 py-2 text-sm flex items-center justify-center font-semibold font-dm w-48'
+                            onClick={handleBackHome}
+                        >
+                            <svg
+                                xmlns='http://www.w3.org/2000/svg'
+                                fill='none'
+                                viewBox='0 0 24 24'
+                                strokeWidth={1.5}
+                                stroke='currentColor'
+                                className='w-6 h-6 mr-3'
+                            >
+                                <path
+                                    strokeLinecap='round'
+                                    strokeLinejoin='round'
+                                    d='M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25'
+                                />
+                            </svg>
+                            inicio
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
