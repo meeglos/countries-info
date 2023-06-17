@@ -17,7 +17,20 @@ const CountryProvider = ({ children }) => {
     const [modal, setModal] = useState(false);
     const [countryInfo, setCountryInfo] = useState({});
 
+    const [gameStarted, setGameStarted] = useState(false);
+    const [numQuestions, setNumQuestions] = useState(10);
+    const [timePerQuestion, setTimePerQuestion] = useState(20);
+    const [continent, setContinent] = useState('Todos');
+
     const [score, setScore] = useState(0);
+    const [correctAnswers, setCorrectAnswers] = useState(0);
+
+    const handleStartGame = (questions, time, cont) => {
+        setNumQuestions(questions);
+        setTimePerQuestion(time);
+        setContinent(cont);
+        setGameStarted(true);
+    };
 
     const handleSetCountryInfo = countryInfo => {
         setCountryInfo(countryInfo);
@@ -30,12 +43,10 @@ const CountryProvider = ({ children }) => {
     const handleSearchKeyUp = event => {
         const search = event.target.value;
 
-        const filteredCountries = independentCountries.filter(
-            country =>
-                country.translations.spa.common
-                    .toLowerCase()
-                    .includes(search.toLowerCase()) ||
-                country.capital.spa.toLowerCase().includes(search.toLowerCase())
+        const filteredCountries = independentCountries.filter(country =>
+            country.translations.spa.common
+                .toLowerCase()
+                .includes(search.toLowerCase())
         );
 
         setCountries(filteredCountries);
@@ -140,6 +151,17 @@ const CountryProvider = ({ children }) => {
                 handleSetCountryInfo,
                 score,
                 setScore,
+                handleStartGame,
+                numQuestions,
+                timePerQuestion,
+                continent,
+                gameStarted,
+                setGameStarted,
+                setNumQuestions,
+                setTimePerQuestion,
+                setContinent,
+                correctAnswers,
+                setCorrectAnswers,
             }}
         >
             {children}

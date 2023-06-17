@@ -1,11 +1,25 @@
 import { useState, useEffect } from 'react';
 import useCountry from '../hooks/useCountry';
+import { useNavigate } from 'react-router-dom';
 
 const QuizLayout = () => {
-    const { independentCountries, score, setScore } = useCountry();
+    const {
+        independentCountries,
+        score,
+        setScore,
+        numQuestions,
+        timePerQuestion,
+        continent,
+        gameStarted,
+        correctAnswers,
+        setCorrectAnswers,
+    } = useCountry();
+
+    const navigate = useNavigate();
+
     const [question, setQuestion] = useState('');
     const [options, setOptions] = useState([]);
-    const [timeLeft, setTimeLeft] = useState(20);
+    const [timeLeft, setTimeLeft] = useState(timePerQuestion);
     const [correctAnswer, setCorrectAnswer] = useState('');
 
     const [backgroundColor, setBackgroundColor] = useState('bg-yellow-500');
@@ -21,7 +35,8 @@ const QuizLayout = () => {
         setQuestionIndex(1);
         setGameOver(false);
         setWidth('0%');
-        setTimeLeft(20);
+        setTimeLeft(timeLeft);
+        setCorrectAnswers(0);
     };
 
     useEffect(() => {
@@ -30,8 +45,15 @@ const QuizLayout = () => {
         }
     }, []);
 
-    const getQuestionData = () => {
-        const countries = independentCountries;
+    const getQuestionData = continent => {
+        let countries;
+        if (continent === 'Todos') {
+            countries = independentCountries;
+        } else {
+            countries = independentCountries.filter(country => {
+                return country.region === continent;
+            });
+        }
         return countries;
     };
 
@@ -51,12 +73,12 @@ const QuizLayout = () => {
     }, [timeLeft, gameOver]);
 
     const actualizarWidth = () => {
-        const newWidth = `${questionIndex * 10}%`;
+        const newWidth = `${questionIndex * (100 / numQuestions)}%`;
         setWidth(newWidth);
     };
 
     const generateQuestion = () => {
-        const countryData = getQuestionData();
+        const countryData = getQuestionData(continent);
 
         if (countryData) {
             const countryKeys = Object.keys(countryData);
@@ -107,7 +129,8 @@ const QuizLayout = () => {
     const handleAnswer = selectedOption => {
         const selectedOptionTrimmed = selectedOption.trim();
         if (selectedOptionTrimmed === correctAnswer) {
-            setScore(prevScore => prevScore + 10);
+            setScore(prevScore => prevScore + 100 / numQuestions);
+            setCorrectAnswers(correctAnswers => correctAnswers + 1);
             setBackgroundColor('bg-green-500');
         } else {
             setBackgroundColor('bg-red-500');
@@ -116,11 +139,11 @@ const QuizLayout = () => {
         const selectedOptionIndex = options.indexOf(selectedOption);
         setSelectedOptionIndex(selectedOptionIndex);
 
-        setTimeLeft(20);
+        setTimeLeft(timePerQuestion);
 
         setTimeout(() => {
             setSelectedOptionIndex(-1);
-            if (questionIndex < 10) {
+            if (questionIndex < numQuestions) {
                 setQuestionIndex(prevIndex => prevIndex + 1);
             } else {
                 setGameOver(true);
@@ -144,6 +167,10 @@ const QuizLayout = () => {
         return newArray;
     };
 
+    const changeConfig = () => {
+        navigate(`/initial-screen`);
+    };
+
     return (
         <div>
             <div className='h-screen p-5 bg-gradient-to-bl from-indigo-900  via-indigo-600 to-indigo-900'>
@@ -157,14 +184,60 @@ const QuizLayout = () => {
                         <h1 className='text-2xl text-red-500 uppercase my-6'>
                             Juego terminado
                         </h1>
-                        <p className='text-2xl text-white my-6'>
-                            Puntaje obtenido: {score}
-                        </p>
+                        <div className='text-2xl text-white my-6 flex flex-col justify-center items-center space-y-2'>
+                            <p>Puntaje obtenido:</p>
+                            <p className='text-yellow-500 font-bold text-3xl'>
+                                {score.toFixed(2)}
+                                <span className='text-xl'>/100</span>
+                            </p>
+                            <p className='text-lg text-red-500'>
+                                ({correctAnswers} aciertos de {numQuestions})
+                            </p>
+                        </div>
                         <button
-                            className='bg-yellow-500 mt-6 rounded-full uppercase tracking-widest text-gray-700 border-red-600 border-2 px-6 py-2 text-lg font-semibold font-dm'
+                            className='bg-yellow-500 mt-6 rounded-full uppercase tracking-widest text-gray-700 border-red-600 border-2 px-6 py-2 text-sm flex items-center font-semibold font-dm'
                             onClick={startGame}
                         >
+                            <svg
+                                xmlns='http://www.w3.org/2000/svg'
+                                fill='none'
+                                viewBox='0 0 24 24'
+                                strokeWidth={1.5}
+                                stroke='currentColor'
+                                className='w-6 h-6 mr-3'
+                            >
+                                <path
+                                    strokeLinecap='round'
+                                    strokeLinejoin='round'
+                                    d='M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.348a1.125 1.125 0 010 1.971l-11.54 6.347a1.125 1.125 0 01-1.667-.985V5.653z'
+                                />
+                            </svg>
                             Comenzar
+                        </button>
+                        <button
+                            className='bg-yellow-500 mt-6 rounded-full uppercase tracking-wide text-gray-700 border-red-600 border-2 px-6 py-2 text-sm flex items-center  font-semibold font-dm'
+                            onClick={changeConfig}
+                        >
+                            <svg
+                                xmlns='http://www.w3.org/2000/svg'
+                                fill='none'
+                                viewBox='0 0 24 24'
+                                strokeWidth={1.5}
+                                stroke='currentColor'
+                                className='w-6 h-6 mr-3'
+                            >
+                                <path
+                                    strokeLinecap='round'
+                                    strokeLinejoin='round'
+                                    d='M9.594 3.94c.09-.542.56-.94 1.11-.94h2.593c.55 0 1.02.398 1.11.94l.213 1.281c.063.374.313.686.645.87.074.04.147.083.22.127.324.196.72.257 1.075.124l1.217-.456a1.125 1.125 0 011.37.49l1.296 2.247a1.125 1.125 0 01-.26 1.431l-1.003.827c-.293.24-.438.613-.431.992a6.759 6.759 0 010 .255c-.007.378.138.75.43.99l1.005.828c.424.35.534.954.26 1.43l-1.298 2.247a1.125 1.125 0 01-1.369.491l-1.217-.456c-.355-.133-.75-.072-1.076.124a6.57 6.57 0 01-.22.128c-.331.183-.581.495-.644.869l-.213 1.28c-.09.543-.56.941-1.11.941h-2.594c-.55 0-1.02-.398-1.11-.94l-.213-1.281c-.062-.374-.312-.686-.644-.87a6.52 6.52 0 01-.22-.127c-.325-.196-.72-.257-1.076-.124l-1.217.456a1.125 1.125 0 01-1.369-.49l-1.297-2.247a1.125 1.125 0 01.26-1.431l1.004-.827c.292-.24.437-.613.43-.992a6.932 6.932 0 010-.255c.007-.378-.138-.75-.43-.99l-1.004-.828a1.125 1.125 0 01-.26-1.43l1.297-2.247a1.125 1.125 0 011.37-.491l1.216.456c.356.133.751.072 1.076-.124.072-.044.146-.087.22-.128.332-.183.582-.495.644-.869l.214-1.281z'
+                                />
+                                <path
+                                    strokeLinecap='round'
+                                    strokeLinejoin='round'
+                                    d='M15 12a3 3 0 11-6 0 3 3 0 016 0z'
+                                />
+                            </svg>
+                            Ajustes
                         </button>
                     </div>
                 ) : (
@@ -179,9 +252,12 @@ const QuizLayout = () => {
                                 </div>
                                 <div className='flex flex-row justify-between text-white text-sm font-thin tracking-wide mb-1'>
                                     <div className='font-dm'>
-                                        Pregunta {questionIndex} de 10
+                                        Pregunta {questionIndex} de{' '}
+                                        {numQuestions}
                                     </div>
-                                    <div className='font-dm'>{score}/100</div>
+                                    <div className='font-dm'>
+                                        {score.toFixed(2)}/100
+                                    </div>
                                 </div>
                             </div>
                         </div>
