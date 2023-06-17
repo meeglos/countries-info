@@ -53,7 +53,7 @@ const InitialScreen = () => {
                             onChange={e =>
                                 setNumQuestions(parseInt(e.target.value))
                             }
-                            className='bg-yellow-500 border-2 border-red-500 text-sm text-indigo-700 text-center font-bold tracking-widest rounded-full focus:ring-indigo-500 focus:border-indigo-500 block p-2.5 w-48'
+                            className='bg-yellow-500 hover:bg-yellow-600 text-center uppercase tracking-widest text-white rounded-lg shadow-sm  px-6 py-2 text-sm flex items-center justify-center font-semibold font-dm w-48'
                         />
                     </div>
                     <div>
@@ -70,7 +70,7 @@ const InitialScreen = () => {
                             onChange={e =>
                                 setTimePerQuestion(parseInt(e.target.value))
                             }
-                            className='bg-yellow-500 border-2 border-red-500 text-sm text-indigo-700 text-center font-bold tracking-widest rounded-full focus:ring-indigo-500 focus:border-indigo-500 block p-2.5 w-48'
+                            className='bg-yellow-500 hover:bg-yellow-600 text-center uppercase tracking-widest text-white rounded-lg shadow-sm  px-6 py-2 text-sm flex items-center justify-center font-semibold font-dm w-48'
                         />
                     </div>
                     <div>
@@ -82,7 +82,7 @@ const InitialScreen = () => {
                         </label>
                         <select
                             value={continent}
-                            className='bg-yellow-500 border-2 border-red-500 text-sm text-indigo-700 text-center font-bold tracking-widest rounded-full focus:ring-indigo-500 focus:border-indigo-500 block p-2.5 w-48'
+                            className='bg-yellow-500 hover:bg-yellow-600 text-center uppercase tracking-widest text-white rounded-lg shadow-sm  px-6 py-2 text-sm flex items-center justify-center font-semibold font-dm w-48'
                             onChange={e => setContinent(e.target.value)}
                         >
                             <option value='Todos'>Todos</option>
