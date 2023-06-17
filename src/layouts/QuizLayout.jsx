@@ -21,6 +21,7 @@ const QuizLayout = () => {
     const [options, setOptions] = useState([]);
     const [timeLeft, setTimeLeft] = useState(timePerQuestion);
     const [correctAnswer, setCorrectAnswer] = useState('');
+    const [countryFlag, setCountryFlag] = useState('');
 
     const [backgroundColor, setBackgroundColor] = useState('bg-yellow-500');
     const [defaultColor, setDefaultColor] = useState('bg-yellow-500');
@@ -85,6 +86,7 @@ const QuizLayout = () => {
             const randomKey =
                 countryKeys[Math.floor(Math.random() * countryKeys.length)];
             const capital = countryData[randomKey].capital.spa;
+            const countryFlag = countryData[randomKey].flags.svg;
 
             const incorrectOptions = generateIncorrectOptions(
                 countryData,
@@ -96,6 +98,7 @@ const QuizLayout = () => {
 
             setQuestion(countryData[randomKey].translations.spa.common);
             setOptions(allOptions);
+            setCountryFlag(countryFlag);
             setCorrectAnswer(capital.trim());
             setSelectedOptionIndex(-1);
         }
@@ -195,7 +198,7 @@ const QuizLayout = () => {
                             </p>
                         </div>
                         <button
-                            className='bg-yellow-500 mt-6 rounded-full uppercase tracking-widest text-gray-700 border-red-600 border-2 px-6 py-2 text-sm flex items-center font-semibold font-dm'
+                            className='bg-green-500 hover:bg-green-600 mt-6 uppercase tracking-widest text-white rounded-sm shadow-sm  px-6 py-2 text-sm flex items-center justify-center font-semibold font-dm w-48'
                             onClick={startGame}
                         >
                             <svg
@@ -215,7 +218,7 @@ const QuizLayout = () => {
                             Comenzar
                         </button>
                         <button
-                            className='bg-yellow-500 mt-6 rounded-full uppercase tracking-wide text-gray-700 border-red-600 border-2 px-6 py-2 text-sm flex items-center  font-semibold font-dm'
+                            className='bg-blue-500 hover:bg-blue-600 mt-6 uppercase tracking-widest text-white rounded-sm shadow-sm  px-6 py-2 text-sm flex items-center justify-center font-semibold font-dm w-48'
                             onClick={changeConfig}
                         >
                             <svg
@@ -261,9 +264,16 @@ const QuizLayout = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className='my-5'>
-                            <div className='text-white text-xl tracking-widest text-center'>
-                                ¿Cuál es la capital de {question}?
+                        <div className='my-6'>
+                            <div className='flex flex-col items-center justify-center'>
+                                <div className='text-white text-xl tracking-widest text-center'>
+                                    ¿Cuál es la capital de {question}?
+                                </div>
+                                <img
+                                    src={countryFlag}
+                                    alt='Country Flag'
+                                    className='w-56 h-[126px] rounded-lg border border-indigo-600 my-6 shadow-md object-cover'
+                                />
                             </div>
                             <div className='m-4 space-y-3'>
                                 <ul>
