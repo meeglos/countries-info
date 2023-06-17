@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import useCountry from '../hooks/useCountry';
 import { useNavigate } from 'react-router-dom';
+import Confetti from 'react-confetti';
 
 const QuizLayout = () => {
     const {
@@ -17,6 +18,7 @@ const QuizLayout = () => {
 
     const navigate = useNavigate();
 
+    const [showConfetti, setShowConfetti] = useState(false);
     const [question, setQuestion] = useState('');
     const [options, setOptions] = useState([]);
     const [timeLeft, setTimeLeft] = useState(timePerQuestion);
@@ -155,6 +157,12 @@ const QuizLayout = () => {
     };
 
     useEffect(() => {
+        if (gameOver && score >= 80) {
+            setShowConfetti(true);
+        }
+    }, [gameOver, score]);
+
+    useEffect(() => {
         if (questionIndex !== 0) {
             generateQuestion();
             actualizarWidth();
@@ -184,6 +192,7 @@ const QuizLayout = () => {
                 </div>
                 {gameOver ? (
                     <div className='flex flex-col items-center justify-center mt-10'>
+                        {showConfetti && <Confetti />}
                         <h1 className='text-2xl text-red-500 uppercase my-6'>
                             Juego terminado
                         </h1>
