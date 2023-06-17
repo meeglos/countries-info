@@ -43,10 +43,12 @@ const CountryProvider = ({ children }) => {
     const handleSearchKeyUp = event => {
         const search = event.target.value;
 
-        const filteredCountries = independentCountries.filter(country =>
-            country.translations.spa.common
-                .toLowerCase()
-                .includes(search.toLowerCase())
+        const filteredCountries = independentCountries.filter(
+            country =>
+                country.translations.spa.common
+                    .toLowerCase()
+                    .includes(search.toLowerCase()) ||
+                country.capital.spa.toLowerCase().includes(search.toLowerCase())
         );
 
         setCountries(filteredCountries);
