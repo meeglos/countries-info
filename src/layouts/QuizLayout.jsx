@@ -22,6 +22,7 @@ const QuizLayout = () => {
     const [timeLeft, setTimeLeft] = useState(timePerQuestion);
     const [correctAnswer, setCorrectAnswer] = useState('');
     const [countryFlag, setCountryFlag] = useState('');
+    const [forbiddenKeys, setForbiddenKeys] = useState([]);
 
     const [backgroundColor, setBackgroundColor] = useState('bg-yellow-500');
     const [defaultColor, setDefaultColor] = useState('bg-yellow-500');
@@ -38,6 +39,7 @@ const QuizLayout = () => {
         setWidth('0%');
         setTimeLeft(timeLeft);
         setCorrectAnswers(0);
+        setForbiddenKeys([]);
     };
 
     useEffect(() => {
@@ -83,11 +85,16 @@ const QuizLayout = () => {
 
         if (countryData) {
             const countryKeys = Object.keys(countryData);
-            const randomKey =
-                countryKeys[Math.floor(Math.random() * countryKeys.length)];
+            let randomKey;
+
+            do {
+                randomKey =
+                    countryKeys[Math.floor(Math.random() * countryKeys.length)];
+            } while (forbiddenKeys.includes(randomKey));
+            setForbiddenKeys(prevKeys => [...prevKeys, randomKey]);
             const capital = countryData[randomKey].capital.spa;
             const countryFlag = countryData[randomKey].flags.svg;
-
+            console.log(forbiddenKeys);
             const incorrectOptions = generateIncorrectOptions(
                 countryData,
                 capital,
@@ -178,8 +185,8 @@ const QuizLayout = () => {
         <div>
             <div className='h-screen p-5 bg-gradient-to-bl from-indigo-900  via-indigo-600 to-indigo-900'>
                 <div className='p-5 border-slate-200 rounded-lg border shadow-lg'>
-                    <h1 className='text-slate-100 font-extrabold text-2xl font-dm uppercase tracking-wider text-center'>
-                        country test
+                    <h1 className='text-slate-100 font-extrabold text-2xl font-dm uppercase tracking-wide text-center'>
+                        ¿Cuál es la capital de ... ?
                     </h1>
                 </div>
                 {gameOver ? (
@@ -265,14 +272,14 @@ const QuizLayout = () => {
                             </div>
                         </div>
                         <div className='my-6'>
-                            <div className='flex flex-col items-center justify-center'>
-                                <div className='text-white text-xl tracking-widest text-center'>
-                                    ¿Cuál es la capital de {question}?
+                            <div className='flex flex-col items-center justify-center min-h-[140px]'>
+                                <div className='text-white text-2xl tracking-widest text-center rounded-lg '>
+                                    {question}
                                 </div>
                                 <img
                                     src={countryFlag}
                                     alt='Country Flag'
-                                    className='w-56 h-[126px] rounded-lg border border-indigo-600 my-6 shadow-md object-cover'
+                                    className='w-56 h-[140px] rounded-lg border border-indigo-600 my-3 shadow-md object-cover'
                                 />
                             </div>
                             <div className='m-4 space-y-3'>
