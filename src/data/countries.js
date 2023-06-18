@@ -40053,7 +40053,7 @@ const countries = [
             },
             spa: {
                 official: 'República Islámica de Irán',
-                common: 'Iran',
+                common: 'Irán',
             },
             srp: {
                 official: 'Исламска Република Иран',

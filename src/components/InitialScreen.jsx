@@ -36,14 +36,14 @@ const InitialScreen = () => {
                 </div>
 
                 <div className='my-8 flex flex-col justify-center items-center space-y-4'>
-                    <p className='text-red-500 uppercase font-extralight tracking-widest text-xl'>
+                    <p className='text-red-500 uppercase font-semibold tracking-widest text-xl'>
                         Configura el juego
                     </p>
 
                     <div>
                         <label
                             htmlFor='visitors'
-                            className='block mb-2 text-sm font-medium text-white'
+                            className='block mb-1 text-sm font-medium text-white'
                         >
                             Número de preguntas:
                         </label>
@@ -59,7 +59,7 @@ const InitialScreen = () => {
                     <div>
                         <label
                             htmlFor='visitors'
-                            className='block mb-2 text-sm font-medium text-white'
+                            className='block mb-1 text-sm font-medium text-white'
                         >
                             Tiempo por pregunta:
                         </label>
@@ -76,7 +76,7 @@ const InitialScreen = () => {
                     <div>
                         <label
                             htmlFor='countries'
-                            className='block mb-2 text-sm font-medium text-white'
+                            className='block mb-1 text-sm font-medium text-white'
                         >
                             Selecciona un continente:
                         </label>

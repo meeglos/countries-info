@@ -28,7 +28,7 @@ export default function Layout() {
                 <div>
                     <Link
                         to={'/initial-screen'}
-                        className='px-5 py-2 rounded-l-lg bg-gradient-to-tl from-indigo-900 via-indigo-400 to-indigo-900 text-white font-bold font-dm shadow-lg border-1 border-red-700 z-10 absolute top-10 right-0 hover:bg-gradient-to-bl hover:from-indigo-900 hover:via-indigo-400 hover:to-indigo-900'
+                        className='px-6 py-2 rounded-l-lg bg-gradient-to-tr from-green-600 via-green-500 to-green-700 text-white font-bold font-dm shadow-lg z-10 absolute top-10 right-0 hover:bg-gradient-to-bl hover:from-green-600 hover:via-green-500 hover:to-green-700'
                     >
                         PLAY
                     </Link>
