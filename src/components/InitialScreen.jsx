@@ -27,9 +27,9 @@ const InitialScreen = () => {
     };
 
     return (
-        <div>
-            <div className='h-screen p-5 bg-gradient-to-bl from-indigo-900  via-indigo-600 to-indigo-900'>
-                <div className='p-5 border-slate-200 rounded-lg border shadow-lg'>
+        <div className='py-5 h-screen bg-gradient-to-bl from-indigo-900  via-indigo-600 to-indigo-900'>
+            <div className='flex flex-col justify-center items-center'>
+                <div className='p-5 w-10/12 border-slate-200 rounded-lg border shadow-lg'>
                     <h1 className='text-slate-100 font-extrabold text-2xl font-dm uppercase tracking-wider text-center'>
                         country test
                     </h1>
@@ -112,7 +112,7 @@ const InitialScreen = () => {
                                     d='M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.348a1.125 1.125 0 010 1.971l-11.54 6.347a1.125 1.125 0 01-1.667-.985V5.653z'
                                 />
                             </svg>
-                            Comenzar
+                            jugar
                         </button>
                         <button
                             className='bg-sky-500 hover:bg-sky-600 mt-6 uppercase tracking-widest text-white rounded-sm shadow-sm  px-6 py-2 text-sm flex items-center justify-center font-semibold font-dm w-48'
