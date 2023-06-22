@@ -134,6 +134,13 @@ const CountryProvider = ({ children }) => {
         }
     };
 
+    const letras = {
+        1: 'A',
+        2: 'B',
+        3: 'C',
+        4: 'D',
+    };
+
     return (
         <CountryContext.Provider
             value={{
@@ -164,6 +171,7 @@ const CountryProvider = ({ children }) => {
                 setContinent,
                 correctAnswers,
                 setCorrectAnswers,
+                letras,
             }}
         >
             {children}

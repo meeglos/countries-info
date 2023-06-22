@@ -13,6 +13,7 @@ const QuizLayout = () => {
         gameStarted,
         correctAnswers,
         setCorrectAnswers,
+        letras,
     } = useCountry();
 
     const navigate = useNavigate();
@@ -94,7 +95,6 @@ const QuizLayout = () => {
             setForbiddenKeys(prevKeys => [...prevKeys, randomKey]);
             const capital = countryData[randomKey].capital.spa;
             const countryFlag = countryData[randomKey].flags.svg;
-            console.log(forbiddenKeys);
             const incorrectOptions = generateIncorrectOptions(
                 countryData,
                 capital,
@@ -181,11 +181,23 @@ const QuizLayout = () => {
         navigate(`/initial-screen`);
     };
 
+    const restartGame = () => {
+        navigate(`/initial-screen`);
+    };
+
+    const transformarIndiceALetra = indice => {
+        if (indice in letras) {
+            return letras[indice];
+        } else {
+            return '#';
+        }
+    };
+
     return (
-        <div>
-            <div className='h-screen p-5 bg-gradient-to-bl from-indigo-900  via-indigo-600 to-indigo-900'>
+        <div className='h-full p-5 bg-gradient-to-bl from-indigo-900  via-indigo-600 to-indigo-900'>
+            <div className='flex flex-col justify-center items-center'>
                 <div className='p-5 border-slate-200 rounded-lg border shadow-lg'>
-                    <h1 className='text-slate-100 font-extrabold text-2xl font-dm uppercase tracking-wide text-center'>
+                    <h1 className='text-slate-100 font-extrabold text-xl font-dm uppercase tracking-wide text-center'>
                         ¿Cuál es la capital de ... ?
                     </h1>
                 </div>
@@ -222,7 +234,7 @@ const QuizLayout = () => {
                                     d='M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.348a1.125 1.125 0 010 1.971l-11.54 6.347a1.125 1.125 0 01-1.667-.985V5.653z'
                                 />
                             </svg>
-                            Comenzar
+                            Jugar
                         </button>
                         <button
                             className='bg-blue-500 hover:bg-blue-600 mt-6 uppercase tracking-widest text-white rounded-sm shadow-sm  px-6 py-2 text-sm flex items-center justify-center font-semibold font-dm w-48'
@@ -251,7 +263,7 @@ const QuizLayout = () => {
                         </button>
                     </div>
                 ) : (
-                    <div>
+                    <div className='w-3/5 max-w-lg'>
                         <div className='flex flex-col items-center justify-center mt-10'>
                             <div className='w-full'>
                                 <div className='w-full h-4 mb-1 bg-gray-200 rounded-full '>
@@ -271,7 +283,7 @@ const QuizLayout = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className='my-6'>
+                        <div className='my-6 w-full flex flex-col items-center'>
                             <div className='flex flex-col items-center justify-center min-h-[140px]'>
                                 <div className='text-white text-2xl tracking-widest text-center rounded-lg '>
                                     {question}
@@ -282,11 +294,11 @@ const QuizLayout = () => {
                                     className='w-56 h-[140px] rounded-lg border border-indigo-600 my-3 shadow-md object-cover'
                                 />
                             </div>
-                            <div className='m-4 space-y-3'>
-                                <ul>
+                            <div className='m-4 w-4/5'>
+                                <ul className='flex flex-col space-y-3'>
                                     {options.map((option, index) => (
                                         <li
-                                            className={`rounded-full text-sm text-gray-800 font-bold font-dm px-4 py-2 mb-3 tracking-widest cursor-pointer flex ${
+                                            className={`rounded-full text-sm text-gray-800 font-bold font-dm px-4 py-2 tracking-widest cursor-pointer flex ${
                                                 selectedOptionIndex === index
                                                     ? backgroundColor
                                                     : defaultColor
@@ -294,8 +306,10 @@ const QuizLayout = () => {
                                             key={index}
                                             onClick={() => handleAnswer(option)}
                                         >
-                                            <span className='border rounded-full border-gray-800 px-1 mr-2 text-sm'>
-                                                {index + 1}
+                                            <span className='border rounded-full border-gray-600 text-gray-800 px-1 mr-2 text-sm'>
+                                                {transformarIndiceALetra(
+                                                    index + 1
+                                                )}
                                             </span>
                                             {option}
                                         </li>
@@ -303,12 +317,66 @@ const QuizLayout = () => {
                                 </ul>
                             </div>
                             <div className='flex flex-row justify-around w-full mt-10'>
-                                <div className='border border-indigo-400 rounded-full px-4 py-2 text-slate-300 text-lg'>
-                                    {timeLeft}
+                                <div className='flex items-center rounded-full border border-indigo-400 px-4 py-2 text-lg text-slate-300'>
+                                    <span className='relative mr-2 flex items-center'>
+                                        <span className='absolute inline-flex h-full w-full animate-ping rounded-full opacity-50'>
+                                            <svg
+                                                xmlns='http://www.w3.org/2000/svg'
+                                                fill='none'
+                                                viewBox='0 0 24 24'
+                                                strokeWidth={1.5}
+                                                stroke='currentColor'
+                                                className='w-6 h-6'
+                                            >
+                                                <path
+                                                    strokeLinecap='round'
+                                                    strokeLinejoin='round'
+                                                    d='M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z'
+                                                />
+                                            </svg>
+                                        </span>
+                                        <span className='relative inline-flex h-6 w-6 rounded-full'>
+                                            <svg
+                                                xmlns='http://www.w3.org/2000/svg'
+                                                fill='none'
+                                                viewBox='0 0 24 24'
+                                                strokeWidth={1.5}
+                                                stroke='currentColor'
+                                                className='w-6 h-6'
+                                            >
+                                                <path
+                                                    strokeLinecap='round'
+                                                    strokeLinejoin='round'
+                                                    d='M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z'
+                                                />
+                                            </svg>
+                                        </span>
+                                    </span>
+                                    <span>
+                                        {timeLeft.toLocaleString('en-US', {
+                                            minimumIntegerDigits: 2,
+                                        })}
+                                    </span>
                                 </div>
-                                <div className='border border-indigo-400 rounded-full px-4 py-2 text-slate-300 text-lg'>
-                                    siguiente
-                                </div>
+                                <button
+                                    onClick={changeConfig}
+                                    className='border border-indigo-400 rounded-full p-3 bg-sky-600 text-slate-300 text-lg'
+                                >
+                                    <svg
+                                        xmlns='http://www.w3.org/2000/svg'
+                                        fill='none'
+                                        viewBox='0 0 24 24'
+                                        strokeWidth={1.5}
+                                        stroke='currentColor'
+                                        className='w-6 h-6 cursor-pointer'
+                                    >
+                                        <path
+                                            strokeLinecap='round'
+                                            strokeLinejoin='round'
+                                            d='M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182m0-4.991v4.99'
+                                        />
+                                    </svg>
+                                </button>
                             </div>
                         </div>
                     </div>
